@@ -1459,3 +1459,1127 @@
 [ info ] [ PARAM ] array (
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:06:32+08:00 ] ::1 ::1 GET /
+[ info ] www.git.com/ [运行时间：0.151009s][吞吐率：6.62req/s] [内存消耗：1,972.27kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\wamp\www\shanshanbaibia\application\index\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:06:34+08:00 ] ::1 ::1 GET /static/index/img/glyphicons-halflings.png
+[ info ] www.git.com/static/index/img/glyphicons-halflings.png [运行时间：0.073004s][吞吐率：13.70req/s] [内存消耗：1,435.74kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'img',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/static/index/css/bootstrap.css',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:06:41+08:00 ] ::1 ::1 GET /admin/index/index
+[ info ] www.git.com/admin/index/index [运行时间：0.131008s][吞吐率：7.63req/s] [内存消耗：1,948.94kb] [文件加载：49]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:06:45+08:00 ] ::1 ::1 GET /admin/auth/login.html
+[ info ] www.git.com/admin/auth/login.html [运行时间：0.050003s][吞吐率：20.00req/s] [内存消耗：1,947.88kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/index/index',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\Controller\Auth->login[ D:\wamp\www\shanshanbaibia\application\admin\controller\Auth.php ]
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\public/../application/admin\view\auth\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:06:45+08:00 ] ::1 ::1 GET /captcha.html
+[ info ] www.git.com/captcha.html [运行时间：0.189011s][吞吐率：5.29req/s] [内存消耗：1,422.88kb] [文件加载：35]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/auth/login.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\wamp\www\shanshanbaibia\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:06:54+08:00 ] ::1 ::1 GET /captcha.html?
+[ info ] www.git.com/captcha.html? [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：1,423.03kb] [文件加载：35]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/auth/login.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\wamp\www\shanshanbaibia\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:06:59+08:00 ] ::1 ::1 POST /admin/auth/dologin.html
+[ info ] www.git.com/admin/auth/dologin.html [运行时间：0.361021s][吞吐率：2.77req/s] [内存消耗：2,995.62kb] [文件加载：54]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'auth',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '39',
+  'referer' => 'http://www.git.com/admin/auth/login.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '12345',
+  'code' => 'dfxy',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\Controller\Auth->dologin[ D:\wamp\www\shanshanbaibia\application\admin\controller\Auth.php ]
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'code',
+  1 => 'msg',
+  2 => 'data',
+  3 => 'url',
+  4 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.026001s ] mysql:dbname=snacks;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `snacks_auser` [ RunTime:0.037002s ]
+[ sql ] [ SQL ] SELECT * FROM `snacks_auser` WHERE  (  username = 'admin' ) LIMIT 1 [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-08-23T11:07:02+08:00 ] ::1 ::1 GET /admin/index/index.html
+[ info ] www.git.com/admin/index/index.html [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,030.28kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/auth/dologin.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\wamp\www\shanshanbaibia\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:02+08:00 ] ::1 ::1 GET /admin/index/home.html
+[ info ] www.git.com/admin/index/home.html [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：1,898.55kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/index/index.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\controller\Index->home[ D:\wamp\www\shanshanbaibia\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\public/../application/admin\view\index\home.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /admin/goods/products_list.html
+[ info ] www.git.com/admin/goods/products_list.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,172.87kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'products_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/index/index.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\Controller\Goods->products_list[ D:\wamp\www\shanshanbaibia\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\public/../application/admin\view\goods\products_list.html [ array (
+  0 => 're',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=snacks;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `snacks_details` [ RunTime:0.005000s ]
+[ sql ] [ SQL ] SELECT * FROM `snacks_details` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/49617d100443da23e0b1820c42f3110d.png,20170822/839111875c23f922d757f2168a84858f.png
+[ info ] www.git.com/uploads/20170822/49617d100443da23e0b1820c42f3110d.png,20170822/839111875c23f922d757f2168a84858f.png [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：1,436.29kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => '49617d100443da23e0b1820c42f3110d.png,20170822',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/5b8967ab7c27f32c5b62f427ad3d70f3.png
+[ info ] www.git.com/uploads/20170822/5b8967ab7c27f32c5b62f427ad3d70f3.png [运行时间：0.106006s][吞吐率：9.43req/s] [内存消耗：1,436.20kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => '5b8967ab7c27f32c5b62f427ad3d70f3.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/png,png
+[ info ] www.git.com/uploads/png,png [运行时间：0.176010s][吞吐率：5.68req/s] [内存消耗：1,435.77kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'png,png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/2d9ee60f4949dc132b6993d49ed53eea.png,20170822/26cb52c12e2f2276983c51aca0232cd1.png
+[ info ] www.git.com/uploads/20170822/2d9ee60f4949dc132b6993d49ed53eea.png,20170822/26cb52c12e2f2276983c51aca0232cd1.png [运行时间：0.219013s][吞吐率：4.57req/s] [内存消耗：1,436.29kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => '2d9ee60f4949dc132b6993d49ed53eea.png,20170822',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/28dd9e561b4c33c0dc8216238117f894.png,20170822/5599f46e37d4f7481578d3fa2264c22b.png
+[ info ] www.git.com/uploads/20170822/28dd9e561b4c33c0dc8216238117f894.png,20170822/5599f46e37d4f7481578d3fa2264c22b.png [运行时间：0.204011s][吞吐率：4.90req/s] [内存消耗：1,436.29kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => '28dd9e561b4c33c0dc8216238117f894.png,20170822',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/deb96206675c695f0ff246e7f42f1ce5.png
+[ info ] www.git.com/uploads/20170822/deb96206675c695f0ff246e7f42f1ce5.png [运行时间：0.136007s][吞吐率：7.35req/s] [内存消耗：1,436.20kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => 'deb96206675c695f0ff246e7f42f1ce5.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/9d7a1c84308bc5c2147bae9009e3aed7.jpg
+[ info ] www.git.com/uploads/20170822/9d7a1c84308bc5c2147bae9009e3aed7.jpg [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：1,436.20kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => '9d7a1c84308bc5c2147bae9009e3aed7.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/e7eeecd7722eb5b22d06a4225a4fdf57.png
+[ info ] www.git.com/uploads/20170822/e7eeecd7722eb5b22d06a4225a4fdf57.png [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：1,436.20kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => 'e7eeecd7722eb5b22d06a4225a4fdf57.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/28dd9e561b4c33c0dc8216238117f894.png,20170822/5599f46e37d4f7481578d3fa2264c22b.png
+[ info ] www.git.com/uploads/20170822/28dd9e561b4c33c0dc8216238117f894.png,20170822/5599f46e37d4f7481578d3fa2264c22b.png [运行时间：0.040003s][吞吐率：25.00req/s] [内存消耗：1,436.29kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => '28dd9e561b4c33c0dc8216238117f894.png,20170822',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/49617d100443da23e0b1820c42f3110d.png,20170822/839111875c23f922d757f2168a84858f.png
+[ info ] www.git.com/uploads/20170822/49617d100443da23e0b1820c42f3110d.png,20170822/839111875c23f922d757f2168a84858f.png [运行时间：0.078004s][吞吐率：12.82req/s] [内存消耗：1,436.29kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => '49617d100443da23e0b1820c42f3110d.png,20170822',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/5b8967ab7c27f32c5b62f427ad3d70f3.png
+[ info ] www.git.com/uploads/20170822/5b8967ab7c27f32c5b62f427ad3d70f3.png [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：1,436.20kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => '5b8967ab7c27f32c5b62f427ad3d70f3.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/png,png
+[ info ] www.git.com/uploads/png,png [运行时间：0.149009s][吞吐率：6.71req/s] [内存消耗：1,435.77kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => 'png,png',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/deb96206675c695f0ff246e7f42f1ce5.png
+[ info ] www.git.com/uploads/20170822/deb96206675c695f0ff246e7f42f1ce5.png [运行时间：0.083005s][吞吐率：12.05req/s] [内存消耗：1,436.20kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => 'deb96206675c695f0ff246e7f42f1ce5.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/2d9ee60f4949dc132b6993d49ed53eea.png,20170822/26cb52c12e2f2276983c51aca0232cd1.png
+[ info ] www.git.com/uploads/20170822/2d9ee60f4949dc132b6993d49ed53eea.png,20170822/26cb52c12e2f2276983c51aca0232cd1.png [运行时间：0.144008s][吞吐率：6.94req/s] [内存消耗：1,436.29kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => '2d9ee60f4949dc132b6993d49ed53eea.png,20170822',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/9d7a1c84308bc5c2147bae9009e3aed7.jpg
+[ info ] www.git.com/uploads/20170822/9d7a1c84308bc5c2147bae9009e3aed7.jpg [运行时间：0.054004s][吞吐率：18.52req/s] [内存消耗：1,436.20kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => '9d7a1c84308bc5c2147bae9009e3aed7.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/e7eeecd7722eb5b22d06a4225a4fdf57.png
+[ info ] www.git.com/uploads/20170822/e7eeecd7722eb5b22d06a4225a4fdf57.png [运行时间：0.049003s][吞吐率：20.41req/s] [内存消耗：1,436.20kb] [文件加载：39]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20170822',
+    2 => 'e7eeecd7722eb5b22d06a4225a4fdf57.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:40+08:00 ] ::1 ::1 GET /admin/goods/pictureadd.html
+[ info ] www.git.com/admin/goods/pictureadd.html [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：2,055.02kb] [文件加载：48]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'pictureadd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/index/index.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\Controller\Goods->pictureadd[ D:\wamp\www\shanshanbaibia\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\public/../application/admin\view\goods\pictureadd.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:41+08:00 ] ::1 ::1 GET /admin/goods/pictureadd.html
+[ info ] www.git.com/admin/goods/pictureadd.html [运行时间：0.121007s][吞吐率：8.26req/s] [内存消耗：1,833.84kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'pictureadd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/products_list.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\Controller\Goods->pictureadd[ D:\wamp\www\shanshanbaibia\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\public/../application/admin\view\goods\pictureadd.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:41+08:00 ] ::1 ::1 GET /admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js
+[ info ] www.git.com/admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js [运行时间：0.252014s][吞吐率：3.97req/s] [内存消耗：1,762.35kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => '__ADMI_PATH__Widget',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/pictureadd.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'My97DatePicker' => 'WdatePicker.js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:07:41+08:00 ] ::1 ::1 GET /admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js
+[ info ] www.git.com/admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js [运行时间：0.062003s][吞吐率：16.13req/s] [内存消耗：1,762.35kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => '__ADMI_PATH__Widget',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/pictureadd.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'My97DatePicker' => 'WdatePicker.js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:09:35+08:00 ] ::1 ::1 GET /admin/goods/pictureadd.html
+[ info ] www.git.com/admin/goods/pictureadd.html [运行时间：0.059004s][吞吐率：16.95req/s] [内存消耗：1,833.83kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'pictureadd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/pictureadd.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\Controller\Goods->pictureadd[ D:\wamp\www\shanshanbaibia\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\public/../application/admin\view\goods\pictureadd.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:09:35+08:00 ] ::1 ::1 GET /admin/goods/pictureadd.html
+[ info ] www.git.com/admin/goods/pictureadd.html [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：1,833.83kb] [文件加载：46]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'pictureadd',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/pictureadd.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\admin\Controller\Goods->pictureadd[ D:\wamp\www\shanshanbaibia\application\admin\controller\Goods.php ]
+[ info ] [ VIEW ] D:\wamp\www\shanshanbaibia\public/../application/admin\view\goods\pictureadd.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:09:35+08:00 ] ::1 ::1 GET /admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js
+[ info ] www.git.com/admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：1,762.35kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => '__ADMI_PATH__Widget',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/pictureadd.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'My97DatePicker' => 'WdatePicker.js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:09:35+08:00 ] ::1 ::1 GET /admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js
+[ info ] www.git.com/admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：1,762.35kb] [文件加载：47]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => '__ADMI_PATH__Widget',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.git.com/admin/goods/pictureadd.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'My97DatePicker' => 'WdatePicker.js',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T11:10:51+08:00 ] ::1 ::1 POST /admin/goods/upload.html
+[ info ] www.git.com/admin/goods/upload.html [运行时间：0.228013s][吞吐率：4.39req/s] [内存消耗：2,936.90kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods',
+    2 => 'upload',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.git.com',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'multipart/form-data; boundary=---------------------------8301861524210',
+  'content-length' => '57179',
+  'referer' => 'http://www.git.com/admin/goods/pictureadd.html',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=e4r1554o5fu1alp7mq7jc122u4',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+)
+[ info ] [ PARAM ] array (
+  'name' => '虾吃虾涮',
+  'cate' => '涮锅',
+  'code' => '999',
+  'address' => '重庆',
+  'stock' => '5',
+  'brand' => '大鱼',
+  'weight' => '8',
+  'taste' => '2',
+  'price' => '56',
+  'keywords' => '好次',
+  'editorValue' => '<p>非常好次，原产地与四川<br/></p>',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\Controller\Goods->upload[ D:\wamp\www\shanshanbaibia\application\admin\controller\Goods.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014000s ] mysql:dbname=snacks;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `snacks_details` [ RunTime:0.006001s ]
+[ error ] [10501]SQLSTATE[HY000]: General error: 1364 Field 'create_time' doesn't have a default value[D:\wamp\www\shanshanbaibia\thinkphp\library\think\db\Connection.php:451]
