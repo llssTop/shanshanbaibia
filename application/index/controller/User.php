@@ -86,7 +86,7 @@ class User extends Controller
 	public function bindphone()
 	{
 		return $this->fetch();
-	}
+	}1
 	public function safety()
 	{
 		return $this->fetch();
