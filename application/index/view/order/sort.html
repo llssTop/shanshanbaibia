@@ -1,5 +1,5 @@
 
-		<link href="../css/sortstyle.css" rel="stylesheet" type="text/css" />
+		<link href="__HCSS_PATH__sortstyle.css" rel="stylesheet" type="text/css" />
 		<!--主体-->
 		<div id="nav" class="navfull">
 			<div class="area clearfix">
@@ -9,7 +9,7 @@
 										<ul class="category-list" id="js_climit_li">
 											<li class="appliance js_toggle relative first selected">
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/cake.png"></i><a class="ml-22" title="点心">点心/蛋糕</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="__HIMG_PATH__cake.png"></i><a class="ml-22" title="点心">点心/蛋糕</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -18,7 +18,7 @@
 																
 																<div class="brand-side">
 													              <dl class="dl-sort"><dt><span>为您推荐</span></dt>
-													                <img src="../images/TJ.jpg">
+													                <img src="__HIMG_PATH__TJ.jpg">
 													              </dl>
 												                </div>																
 																
@@ -58,7 +58,7 @@
 											</li>
 											<li class="appliance js_toggle relative">
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/cookies.png"></i><a class="ml-22" title="饼干、膨化">饼干/膨化</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="__HIMG_PATH__cookies.png"></i><a class="ml-22" title="饼干、膨化">饼干/膨化</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -66,7 +66,7 @@
 															<div class="menu-srot">
 																<div class="brand-side">
 													              <dl class="dl-sort"><dt><span>为您推荐</span></dt>
-													                <img src="../images/TJ.jpg">
+													                <img src="__HIMG_PATH__TJ.jpg">
 													              </dl>
 												                </div>																	
 																<div class="sort-side">
@@ -115,7 +115,7 @@
 											
 											<li class="appliance js_toggle relative">
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><i><img src="../images/candy.png"></i><a class="ml-22" title="糖果、蜜饯">糖果/蜜饯</a></h3>
+													<h3 class="category-name b-category-name"><i><img src="__HIMG_PATH__candy.png"></i><a class="ml-22" title="糖果、蜜饯">糖果/蜜饯</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top">
 													<div class="area-in">
@@ -123,7 +123,7 @@
 															<div class="menu-srot">
 																<div class="brand-side">
 													              <dl class="dl-sort"><dt><span>为您推荐</span></dt>
-													                <img src="../images/TJ.jpg">
+													                <img src="__HIMG_PATH__TJ.jpg">
 													              </dl>
 																</div>																
 																<div class="sort-side">
@@ -159,9 +159,7 @@
 												</div>
                                             <b class="arrow"></b>
 											</li>
-											
-											
-										
+
 										</ul>
 					</div>
 				</div>
@@ -178,10 +176,10 @@
 		<div class="clear"></div>
 		<!--引导 -->
 		<div class="navCir">
-			<li><a href="home.html"><i class="am-icon-home "></i>首页</a></li>
-			<li  class="active"><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
-			<li><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>	
-			<li><a href="../person/index.html"><i class="am-icon-user"></i>我的</a></li>					
+			<li><a href="{:url('index/index/index')}"><i class="am-icon-home "></i>首页</a></li>
+			<li  class="active"><a href="{:url('index/order/sort')}"><i class="am-icon-list"></i>分类</a></li>
+			<li><a href="{:url('index/order/shopcart')}"><i class="am-icon-shopping-basket"></i>购物车</a></li>	
+			<li><a href="{:url('index/user/information')}"><i class="am-icon-user"></i>我的</a></li>					
 		</div>
 	</body>
 
