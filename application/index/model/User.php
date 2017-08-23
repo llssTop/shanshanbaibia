@@ -2,6 +2,7 @@
 namespace app\index\model;
 use think\Model;
 use think\Db;
+use think\Session;
 class User extends Model
 {
 	public function checkinfo($uname)
@@ -35,5 +36,43 @@ class User extends Model
 		 }else{
 			return $result;
 		 } 
+	}
+	// 用户头像的修改
+	public function imgInfo($path )
+	{
+		$uid = session('userid');
+		//dump($uid);
+		$result = Db::name('user')->where('uid',"$uid")->update(['avatar'=>"$path"]);
+		//dump($result);
+		if($result){
+			return $result;
+		}else {
+			return false;
+		}
+	}
+	public function checkDetail($uid)
+	{
+		$result = Db::name('user')->where('uid',$uid)->find();
+		if($result){
+			return $result;
+		}else {
+			return false;
+		}
+	}
+	public function changeInfo($data)
+	{
+		$uid = session('userid');
+		$uname = $data['uname'];
+		$sex = $data['sex'];
+		$birthday = $data['birthday'];
+		$phone = $data['phone'];
+		$email = $data['email'];
+		$result = Db::name('user')->where('uid',"$uid")->update(['uname'=>"$uname",'sex'=>"$sex",'birthday'=>"$birthday",'phone'=>"$phone",'email'=>"$email"]);
+		dump($result);
+		if($result){
+			return $result;
+		} else {
+			return false;
+		}
 	}
 }

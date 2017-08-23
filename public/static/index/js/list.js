@@ -72,7 +72,7 @@ $(document).ready(function() {
 					$(document).scrollTop(sts);
 				});
        } else {
-
+/*
 		dv.attr('otop', dv.offset().top); //存储原来的距离顶部的距离
 		var tp = parseInt(dv.attr('otop'))+36;
 		$(window).scroll(function() {
@@ -97,7 +97,7 @@ $(document).ready(function() {
 		});
 
 
-
+*/
 	}
 });
 

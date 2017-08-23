@@ -1,4 +1,4 @@
-
+<script src="__HJS_PATH__jquery.min.js"></script>
             <div class="nav-table">
 					   <div class="long-title"><span class="all-goods">全部分类</span></div>
 					   <div class="nav-cont">
@@ -19,60 +19,56 @@
 		<div class="center">
 			<div class="col-main">
 				<div class="main-wrap">
-
+					
 					<div class="user-info">
 						<!--标题 -->
 						<div class="am-cf am-padding">
 							<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">个人资料</strong> / <small>Personal&nbsp;information</small></div>
 						</div>
 						<hr/>
-
 						<!--头像 -->
+                  
 						<div class="user-infoPic">
-
 							<div class="filePic">
-								<input type="file" class="inputPic" allowexts="gif,jpeg,jpg,png,bmp" accept="image/*">
-								<img class="am-circle am-img-thumbnail" src="__HIMG_PATH__getAvatar.do.jpg" alt="" />
+								<div>
+							<img class="am-circle am-img-thumbnail" src="__APIC_PATH__<?php  echo $data['avatar']?>" alt="" />
+								</div>
 							</div>
-
 							<p class="am-form-help">头像</p>
-
 							<div class="info-m">
-								<div><b>用户名：<i>小叮当</i></b></div>
+								<div><b>用户名：<i>{$data['uname']}</i></b></div>
 								<div class="u-level">
 									<span class="rank r2">
-							             <s class="vip1"></s><a class="classes" href="#">铜牌会员</a>
+							             <s class="vip1"></s><a class="classes" href="#">{switch $data['vip']} {case value="0" break}铜牌会员{/case}
+											{case value="1" break}银牌会员{/case} {case value="2" break}金牌会员{/case}{default /}铜牌会员
+											{/switch}
+							         </a>
 						            </span>
 								</div>
 								<div class="u-safety">
 									<a href="safety.html">
 									 账户安全
-									<span class="u-profile"><i class="bc_ee0000" style="width: 60px;" width="0">60分</i></span>
+									<span class="u-profile"><i class="bc_ee0000" style="width: 60px;" width="0">{$data['grade']}</i></span>
 									</a>
 								</div>
-							</div>
-						</div>
 
+							</div>
+							<div style="margin:40px auto; width:40px;height:6opx;">
+									<form action="{:url('index/user/upload')}" enctype="multipart/form-data" method="post">
+										<input type="file" name="image" /> <br>
+										<input type="submit" value="上传" />
+									</form>
+								</div>
+						</div>
 						<!--个人信息 -->
 						<div class="info-main">
 							<form class="am-form am-form-horizontal">
-
 								<div class="am-form-group">
 									<label for="user-name2" class="am-form-label">昵称</label>
 									<div class="am-form-content">
 										<input type="text" id="user-name2" placeholder="nickname">
-
 									</div>
 								</div>
-
-								<div class="am-form-group">
-									<label for="user-name" class="am-form-label">姓名</label>
-									<div class="am-form-content">
-										<input type="text" id="user-name2" placeholder="name">
-
-									</div>
-								</div>
-
 								<div class="am-form-group">
 									<label class="am-form-label">性别</label>
 									<div class="am-form-content sex">
@@ -87,44 +83,31 @@
 										</label>
 									</div>
 								</div>
-
-								<div class="am-form-group">
+								<div class="am-form-group" >
 									<label for="user-birth" class="am-form-label">生日</label>
-									<div class="am-form-content birth">
-										<div class="birth-select">
-											<select data-am-selected>
-												<option value="a">2015</option>
-												<option value="b">1987</option>
-											</select>
-											<em>年</em>
-										</div>
-										<div class="birth-select2">
-											<select data-am-selected>
-												<option value="a">12</option>
-												<option value="b">8</option>
-											</select>
-											<em>月</em></div>
-										<div class="birth-select2">
-											<select data-am-selected>
-												<option value="a">21</option>
-												<option value="b">23</option>
-											</select>
-											<em>日</em></div>
-									</div>
-							
+									<div id="box" style="float:left; width:80px;height:60px;" >
+									      <select name="sel1" id="sel1">
+									        <option value="year">年</option>
+									      </select> 
+									      <select name="sel2" id="sel2">
+									        <option value="month">月</option>
+									      </select> 
+									      <select name="sel3" id="sel3">
+									        <option value="day">日</option>
+									      </select>
+									      <span id="result"></span>
+									    </div>
 								</div>
 								<div class="am-form-group">
 									<label for="user-phone" class="am-form-label">电话</label>
 									<div class="am-form-content">
 										<input id="user-phone" placeholder="telephonenumber" type="tel">
-
 									</div>
 								</div>
 								<div class="am-form-group">
 									<label for="user-email" class="am-form-label">电子邮件</label>
 									<div class="am-form-content">
 										<input id="user-email" placeholder="Email" type="email">
-
 									</div>
 								</div>
 								<div class="am-form-group address">
@@ -139,32 +122,24 @@
 												<span class="am-icon-angle-right"></span>
 											</p>
 										</a>
-
 									</div>
 								</div>
 								<div class="am-form-group safety">
 									<label for="user-safety" class="am-form-label">账号安全</label>
 									<div class="am-form-content safety">
 										<a href="safety.html">
-
 											<span class="am-icon-angle-right"></span>
-
 										</a>
-
 									</div>
 								</div>
 								<div class="info-btn">
-									<div class="am-btn am-btn-danger">保存修改</div>
+									<div class="am-btn am-btn-danger" id ="change">保存修改</div>
 								</div>
-
 							</form>
 						</div>
-
 					</div>
-
 				</div>
 				<!--底部-->
-			
 			</div>
 			<div style="position:absolute; top:190px; left:65px;">
 			<aside class="menu">
@@ -212,3 +187,141 @@
 		</div>
 	</body>
 </html>
+<script type="text/javascript">
+     $("#change").click(function(){
+     	$.post('/index/user/changInfo/',
+     		{uname:$("#user-name2").val(),
+     		sex:$("input[type='radio']:checked").val(),
+     		result:$("#result").val(),
+     		phone:$("#user-phone").val(),
+     		email:$("#user-email").val()
+     	},function(data){
+				console.log(data);
+			},'json');
+     });
+</script>
+<script>
+   //生成日期
+   function creatDate()
+   {
+     //生成1900年-2100年
+     for(var i = 2016; i >= 1950; i--)
+     {
+       //创建select项
+       var option = document.createElement('option');
+       option.setAttribute('value',i);
+       option.innerHTML = i;
+       sel1.appendChild(option);
+     }
+     //生成1月-12月
+     for(var i = 1; i <=12; i++){
+       var option1 = document.createElement('option');
+       option1.setAttribute('value',i);
+       option1.innerHTML = i;
+       sel2.appendChild(option1);
+     }
+     //生成1日—31日
+     for(var i = 1; i <=31; i++){
+       var option2 = document.createElement('option');
+       option2.setAttribute('value',i);
+       option2.innerHTML = i;
+       sel3.appendChild(option2);
+     }
+   }
+   creatDate();
+   //保存某年某月的天数
+   var days;
+ 
+   //年份点击 绑定函数
+   sel1.onclick = function()
+   {
+     //月份显示默认值
+     sel2.options[0].selected = true;
+     //天数显示默认值
+     sel3.options[0].selected = true;
+   }
+   //月份点击 绑定函数
+   sel2.onclick = function()
+   {
+     //天数显示默认值
+     sel3.options[0].selected = true;
+     //计算天数的显示范围
+     //如果是2月
+     if(sel2.value == 2)
+     {
+       //判断闰年
+       if((sel1.value % 4 === 0 && sel1.value % 100 !== 0) || sel1.value % 400 === 0)
+       {
+         days = 29;
+       }
+       else
+       {
+         days = 28;
+       }
+       //判断小月
+     }else if(sel2.value == 4 || sel2.value == 6 ||sel2.value == 9 ||sel2.value == 11){
+       days = 30;
+     }else{
+       days = 31;
+     }
+ 
+     //增加或删除天数
+     //如果是28天，则删除29、30、31天(即使他们不存在也不报错)
+     if(days == 28){
+       sel3.remove(31);
+       sel3.remove(30);
+       sel3.remove(29);
+     }
+     //如果是29天
+     if(days == 29){
+       sel3.remove(31);
+       sel3.remove(30);
+       //如果第29天不存在，则添加第29天
+       if(!sel3.options[29]){
+         sel3.add(new Option('29','29'),null)
+       }
+     }
+     //如果是30天
+     if(days == 30){
+       sel3.remove(31);
+       //如果第29天不存在，则添加第29天
+       if(!sel3.options[29]){
+         sel3.add(new Option('29','29'),null)
+       }
+       //如果第30天不存在，则添加第30天
+       if(!sel3.options[30]){
+         sel3.add(new Option('30','30'),null)
+       }
+     }
+     //如果是31天
+     if(days == 31){
+       //如果第29天不存在，则添加第29天
+       if(!sel3.options[29])
+       {
+         sel3.add(new Option('29','29'),null)
+       }
+       //如果第30天不存在，则添加第30天
+       if(!sel3.options[30])
+       {
+         sel3.add(new Option('30','30'),null)
+       }
+       //如果第31天不存在，则添加第31天
+       if(!sel3.options[31])
+       {
+         sel3.add(new Option('31','31'),null)
+       }
+     }
+   }
+ 
+   //结果显示 设置好日期时间后 弹窗通知
+   box.onclick = function()
+    {
+    //当年、月、日都已经为设置值时
+	    if(sel1.value !='year' && sel2.value != 'month' && sel3.value !='day')
+	    {
+	      var result = document.getElementById('result').innerText = sel1.value + '/' + sel2.value + '/' + sel3.value;
+	      console.log(result);
+	      alert('日期已经设置完毕');
+	    } 
+    }
+ </script>
