@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒老师</title>
+	<meta name="keywords" content="盒老师">
+	<meta name="content" content="盒老师">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <link type="text/css" rel="stylesheet" href="__ADMIN_PATH__re/css/login.css">
+   <!--  <script type="text/javascript" src="__ADMIN_PATH__re/js/jquery.min.js"></script> -->
+</head>
+<body class="login_bj" >
+<div class="zhuce_body">
+	<div class="logo"><a href="#"><img src="__ADMIN_PATH__re/images/logo.png" width="114" height="54" border="0"></a></div>
+    <div class="zhuce_kong">
+    	<div class="zc">
+        	<div class="bj_bai" style="height:500px;">
+            <h3>欢迎注册</h3>
+       	  	  <form action="" method="post">
+                <input name="username" type="text" class="kuang_txt phone" placeholder="用户名">
+                <input name="phone" type="num" class="kuang_txt phone" placeholder="手机号" id="phone">
+                <!-- 添加获取手机验证 -->
+                <!-- <input type="text" placeholder="请输入验证码" id="phoneyanzheng" name="code" onfocus="this.value = ";"onblur="if(this.value == "){this.value='PhoneCode';}" />
+                <input type="button" value="获取验证码" onclick="getPhone()"  id="dyMoblieButton" /> -->
+                <input name="email" type="text" class="kuang_txt email" placeholder="邮箱">
+                <input name="pass" type="password" class="kuang_txt possword" placeholder="密码">
+                <input name="rpass" type="password" class="kuang_txt phone" placeholder="确认密码">
+               <!--  <input name="text" type="text" class="kuang_txt possword" placeholder="邀请码"> -->
+                <input name="yzm" type="text" class="kuang_txt yanzm" placeholder="验证码">
+                <div>
+                	<div class="hui_kuang"><img src="{:captcha_src()}" alt="captcha"  onclick="this.src = this.src+'?'"/></div>
+                	<!-- <div class="shuaxin"><a href="#"><img src="__ADMIN_PATH__re/images/zc_25.jpg" width="13" height="14"></a></div> -->
+                </div>
+                <div>
+               		<input name="" type="checkbox" value=""><span>已阅读并同意<a href="#" target="_blank"><span class="lan">《XXXXX使用协议》</span></a></span>
+                </div>
+                <input value="注册" type="submit" id="re" class="btn_zhuce" />
+                
+                </form>
+            </div>
+        	<div class="bj_right" style="height:500px;">
+            	<p>使用以下账号直接登录</p>
+                <a href="#" class="zhuce_qq">QQ注册</a>
+                <a href="#" class="zhuce_wb">微博注册</a>
+                <a href="#" class="zhuce_wx">微信注册</a>
+                <p>已有账号？<a href="index.php?m=home&c=User&a=login">立即登录</a></p>
+            
+            </div>
+        </div>
+        <P>Diyhe.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您定制盒子模型  更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></P>
+    </div>
+
+</div>
+<script>
+            var yanzhengma;
+            var phone;
+            var flag;
+               function getPhone(){
+                flag = false;
+                var big;
+                if($("#phone").val() == ''){
+                    alert('请输入手机号');
+                }else{
+                    $("#dyMoblieButton").removeAttr('onclick');
+                    if(!flag){
+                        flag = true;
+                        var num = 60;
+                        $("#dyMoblieButton").val('已发送'+ '(' + num-- + ')');
+                        phone = $("#phone").val();
+                        alert(phone);
+                        $.post("index.php?m=home&c=User&a=dosafety",{phone:phone},function(data){
+                            yanzhengma = data['notice'];
+                            console.log(yanzhengma);
+                        },'json');  
+                        
+                        if(flag){
+                            big = setInterval(function(){
+                                $("#dyMoblieButton").val('已发送'+ '(' + num-- + ')');
+                                if(num == -1){
+                                    $("#dyMoblieButton").val('获取');
+                                    num = 60;
+                                    flag = false;
+                                    clearInterval(big);
+                                }
+                            },1000);
+                        }
+                    }
+                }
+              }
+               function doreg(){
+                    if($("#phoneyanzheng").val() == yanzhengma){
+                        return true;
+                    }else{
+                       alert('验证码错误，请稍后重试');
+                    }
+               }
+           </script>
+<script src="__ADMIN_PATH__re/js/jQuery-1.11.3.min.js"></script>
+<script>
+$('#re').click(function(){
+    var name = $('input[name=username]').val();
+    var phone = $('input[name=phone]').val();
+    $.post("{:url('doregister')}",{name:name,phone:phone},function(data){
+       alert(data);
+    },'json');
+})
+</script>
+</body>
+
+</html>
