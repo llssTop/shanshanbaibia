@@ -79,5 +79,21 @@ class User extends Controller
 		session(null);
 		$this->success('退出登录成功',url('index/user/login'));
 	}
+	public function address()
+	{
+		return $this->fetch();
+	}
+	public function bindphone()
+	{
+		return $this->fetch();
+	}
+	public function email()
+	{
+		return $this->fetch();	
+	}
+	public function safety()
+	{
+		return $this->fetch();
+	}
 	
 }

@@ -212,7 +212,7 @@
 					</div>
 				</div>
 			</div>
-			<div style="float:left; position:absolute;left:60px;top:145px">
+			<div style="position:absolute; top:190px; left:65px;">
 			<aside class="menu">
 				<ul>
 					<li class="person">
@@ -221,39 +221,40 @@
 					<li class="person">
 						<a href="#">个人资料</a>
 						<ul>
-							<li> <a href="information.html">个人信息</a></li>
-							<li> <a href="safety.html">安全设置</a></li>
-							<li> <a href="address.html">收货地址</a></li>
+							<li class="active"> <a href="{:url('index/user/information')}">个人信息</a></li>
+							<li> <a href="{:url('index/user/safety')}">安全设置</a></li>
+							<li> <a href="{:url('index/user/address')}">收货地址</a></li>
 						</ul>
 					</li>
 					<li class="person">
 						<a href="#">我的交易</a>
 						<ul>
-							<li class="active"><a href="order.html">订单管理</a></li>
-							<li> <a href="change.html">退款售后</a></li>
+							<li><a href="{:url('index/order/order')}">订单管理</a></li>
+							<li> <a href="{:url('index/order/change')}">退款售后</a></li>
 						</ul>
 					</li>
 					<li class="person">
 						<a href="#">我的资产</a>
 						<ul>
-							<li> <a href="coupon.html">优惠券 </a></li>
-							<li> <a href="bonus.html">红包</a></li>
-							<li> <a href="bill.html">账单明细</a></li>
+							<li> <a href="{:url('index/bonus/coupon')}">优惠券 </a></li>
+							<li> <a href="{:url('index/bonus/bonus')}">红包</a></li>
+							<li> <a href="{:url('index/bonus/bill')}">账单明细</a></li>
 						</ul>
 					</li>
 
 					<li class="person">
 						<a href="#">我的小窝</a>
 						<ul>
-							<li> <a href="collection.html">收藏</a></li>
-							<li> <a href="foot.html">足迹</a></li>
-							<li> <a href="comment.html">评价</a></li>
-							<li> <a href="news.html">消息</a></li>
+							<li> <a href="{:url('index/collection/collection')}">收藏</a></li>
+							<li> <a href="{:url('index/collection/foot')}">足迹</a></li>
+							<li> <a href="{:url('index/collection/comment')}">评价</a></li>
+							<li> <a href="{:url('index/collection/news')}">消息</a></li>
 						</ul>
 					</li>
 
 				</ul>
 			</aside>
+		</div>
 		</div>
 		</div>
 	
