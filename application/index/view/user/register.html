@@ -1,0 +1,176 @@
+ {__NOLAYOUT__}
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="stylesheet" href="__HCSS_PATH__amazeui.min.css" />
+		<link href="__HCSS_PATH__dlstyle.css" rel="stylesheet" type="text/css">
+		<script src="__HJS_PATH__jQuery-1.11.3.js"></script>
+		<script src="__HJS_PATH__amazeui.min.js"></script>
+		<script src="__HJS_PATH__bootstrap.min.js"></script>
+		<script type="text/javascript">
+		</script>
+	</head>
+	<body>
+		<div class="login-boxtitle">
+			<a href="home/demo.html"><img alt="" src="__HIMG_PATH__logobig.png" /></a>
+		</div>
+		<div class="container">
+		<div class="res-banner">
+			<div class="res-main">
+				<div class="login-banner-bg"><span></span><img src="__HIMG_PATH__big.jpg" /></div>
+				<div class="login-box">
+					<div class="am-tabs" id="doc-my-tabs">
+						<ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
+							<li class="am-active"><a href="">注册</a></li>
+						</ul>
+						<div class="am-tabs-bd">
+							<div class="am-tab-panel am-active">
+							<form method="post" action= "{:url('doregister')}" onsubmit = "return checkregister()">
+								<div class="user-name">
+									<label for="user"><i class="glyphicon glyphicon-user"></i></label>
+									<input type="text" name="uname" id="username" placeholder="用户名" onblur="checkUser()">
+                 				</div>
+                                <div class="user-phone">
+									<label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
+									<input type="tel" name="tel" id="phone" placeholder="请输入手机号" onblur = "checkPhone()">
+                 				</div>
+                 																
+                 				<div class="verification">
+									<label for="code"><i class="am-icon-code-fork"></i></label>
+									<input type="text" name="vercode" id="code" placeholder="请输入验证码" onblur = "checkCode()">
+								</div>
+								<div>
+									<img src="{:captcha_src()}" alt="" width="100" height="32" class="passcode" style="height:43px;cursor:pointer;" onclick="this.src=this.src+'?'">  
+								</div>
+	                			 <div class="user-pass">
+									    <label for="password"><i class="am-icon-lock"></i></label>
+									    <input type="password" name="pwd" id="password" placeholder="设置密码" onblur="checkPwd()">
+	                			 </div>										
+	                			 <div class="user-pass">
+									    <label for="passwordRepeat"><i class="am-icon-lock"></i></label>
+									    <input type="password" name="repwd" id="passwordRepeat" placeholder="确认密码" onblur = "checkRepwd()">
+	                			 </div>	
+	                			 <div class="am-cf">
+											<input type="submit" name="" id ="sub" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+								</div>
+							</form>
+								 <div class="login-links">
+										<label for="reader-me">
+											<input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
+										</label>
+							  	</div>
+										
+									<hr>
+								</div>
+								<script>
+									$(function() {
+									    $('#doc-my-tabs').tabs();
+									  })
+								</script>
+
+							</div>
+						</div>
+				</div>
+			</div>
+					<div class="footer ">
+						<div class="footer-hd ">
+							<p>
+								<a href="# ">恒望科技</a>
+								<b>|</b>
+								<a href="# ">商城首页</a>
+								<b>|</b>
+								<a href="# ">支付宝</a>
+								<b>|</b>
+								<a href="# ">物流</a>
+							</p>
+						</div>
+					</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var checkname = 'false';
+	var pwd = '';
+	var repwd = '';
+	var checkVer = 'false';
+	function checkUser()
+	{
+		$("#username").css('border','1px solid red');
+		var uname = $('#username').val();
+		$.post("{:url('index/user/check')}",{uname:uname},function(data){
+			if(data['errcode']==0){
+				checkname = 'true';
+				return true;
+			}
+			checkname = 'false';
+			return false;
+		},'json');
+	}
+	function checkPhone()
+	{
+		var Phone = $("#phone").val();
+		if(!(/^1[3|4|5|7|8][0-9]{9}$/.test(Phone)))
+        {
+        	$("#phone").css = ('border','1px solid red');
+           	$("#phone").val('手机号格式错误');
+            return false;
+        }
+        return true;
+	}
+	/*function checkEmail()
+	{
+		var Email = $("#email").val();
+		var regs = new RegExp("^([0-9a-zA-Z])+@([0-9a-zA-Z])+(.[a-zA-Z])");
+		emailOK= regs.exec(email);
+		if(typeof(emailOK) === 'Array'){
+			return true;
+		}else{
+			return false;
+		}
+	}*/
+	function checkCode()
+	{
+		var code = $("#code").val();
+		$.post("{:url('index/user/checkCode')}",{code:code},function(data){
+			if(data['errcode']==0){
+				checkVer = 'true';
+				return true;
+			}
+			checkVer = 'false';
+			return false;
+		},'json');
+
+	}
+	function checkPwd()
+	{
+		pwd = $("#password").val();
+		if(pwd == ''){
+			return false;
+		}
+		return true;
+	}
+	function checkRepwd()
+	{
+		repwd = $("#passwordRepeat").val();
+		pwd = $("#password").val();
+		if(repwd != pwd){
+			$("#passwordRepeat").val('两次密码输入不一致');
+			return false;
+		}
+		return true;
+	}
+    function checkregister()   
+	{
+		if(checkRepwd() && checkPwd() && checkPhone() && checkCode() && checkname == 'true'){
+			return true;
+		}
+		return false;
+	}
+</script>
