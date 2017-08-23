@@ -146,6 +146,12 @@ return [
 		 '__HJS_PATH__' => '/static/index/js/',
         '__HCSS_PATH__' => '/static/index/css/',
         '__HIMG_PATH__' => '/static/index/images/',
+        '__ADMIN_PATH__' => '/static/admin/',
+        '__AJS_PATH__' => '/static/admin/js/',
+        '__AIMG_PATH__' => '/static/admin/images/',
+        '__AFONT_PATH__' => '/static/admin/font/',
+        '__ACSS_PATH__' => '/static/admin/css/',
+        '__APIC_PATH__' => '/uploads/'
 	],
 	// 默认跳转页面对应的模板文件
 	'dispatch_success_tmpl' => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
