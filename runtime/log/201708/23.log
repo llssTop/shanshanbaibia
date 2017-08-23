@@ -3853,3 +3853,426 @@
 )
 [ info ] [ LOG ] INIT File
 [ error ] [64]Cannot redeclare app\index\controller\User::email()[F:\wamp64\www\shanshanbaibia\application\index\controller\User.php:90]
+---------------------------------------------------------------
+[ 2017-08-23T12:56:55+08:00 ] ::1 ::1 GET /index/user/information/
+[ info ] www.llsstop.com/index/user/information/ [运行时间：0.094005s][吞吐率：10.64req/s] [内存消耗：3,590.50kb] [文件加载：55]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'information',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/index/detail/introduction',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\User->information[ F:\wamp64\www\shanshanbaibia\application\index\controller\User.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:56:56+08:00 ] ::1 ::1 GET /static/images/extra.png
+[ info ] www.llsstop.com/static/images/extra.png [运行时间：0.061004s][吞吐率：16.39req/s] [内存消耗：1,669.17kb] [文件加载：39]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'extra.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/static/index/css/demo.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:56:57+08:00 ] ::1 ::1 GET /index/user/safety.html
+[ info ] www.llsstop.com/index/user/safety.html [运行时间：0.076005s][吞吐率：13.16req/s] [内存消耗：3,586.40kb] [文件加载：55]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'safety',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/index/user/information/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\User->safety[ F:\wamp64\www\shanshanbaibia\application\index\controller\User.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\safety.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:56:57+08:00 ] ::1 ::1 GET /index/images/getAvatar.do.jpg
+[ info ] www.llsstop.com/index/images/getAvatar.do.jpg [运行时间：0.060004s][吞吐率：16.67req/s] [内存消耗：1,669.52kb] [文件加载：40]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'images',
+    2 => 'getAvatar.do.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/index/user/safety.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:56:58+08:00 ] ::1 ::1 GET /static/images/extra.png
+[ info ] www.llsstop.com/static/images/extra.png [运行时间：0.078005s][吞吐率：12.82req/s] [内存消耗：1,669.17kb] [文件加载：39]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'extra.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/static/index/css/demo.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:56:59+08:00 ] ::1 ::1 GET /index/user/address.html
+[ info ] www.llsstop.com/index/user/address.html [运行时间：0.067003s][吞吐率：14.92req/s] [内存消耗：3,598.44kb] [文件加载：55]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'address',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/index/user/safety.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\User->address[ F:\wamp64\www\shanshanbaibia\application\index\controller\User.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\address.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:57:00+08:00 ] ::1 ::1 GET /index/user/address.html
+[ info ] www.llsstop.com/index/user/address.html [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：3,394.35kb] [文件加载：53]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'address',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/index/user/address.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\User->address[ F:\wamp64\www\shanshanbaibia\application\index\controller\User.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\address.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:57:02+08:00 ] ::1 ::1 GET /index/bonus/bill.html
+[ info ] www.llsstop.com/index/bonus/bill.html [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,353.60kb] [文件加载：48]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'bonus',
+    2 => 'bill',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/index/user/address.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Bonus->bill[ F:\wamp64\www\shanshanbaibia\application\index\controller\Bonus.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\bonus\bill.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:57:02+08:00 ] ::1 ::1 GET /index/css/blstyle.css
+[ info ] www.llsstop.com/index/css/blstyle.css [运行时间：0.045002s][吞吐率：22.22req/s] [内存消耗：1,669.18kb] [文件加载：40]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'css',
+    2 => 'blstyle.css',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://www.llsstop.com/index/bonus/bill.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:57:02+08:00 ] ::1 ::1 GET /static/images/extra.png
+[ info ] www.llsstop.com/static/images/extra.png [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：1,669.17kb] [文件加载：39]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'extra.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/static/index/css/demo.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:57:02+08:00 ] ::1 ::1 GET /index/images/combo.png
+[ info ] www.llsstop.com/index/images/combo.png [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：1,669.20kb] [文件加载：40]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'images',
+    2 => 'combo.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/index/bonus/bill.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:57:04+08:00 ] ::1 ::1 GET /index/index/index/
+[ info ] www.llsstop.com/index/index/index/ [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,033.03kb] [文件加载：45]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/index/bonus/bill.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\wamp64\www\shanshanbaibia\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:57:04+08:00 ] ::1 ::1 GET /static/index/img/glyphicons-halflings.png
+[ info ] www.llsstop.com/static/index/img/glyphicons-halflings.png [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：1,669.23kb] [文件加载：39]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'index',
+    2 => 'img',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/static/index/css/bootstrap.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:57:06+08:00 ] ::1 ::1 GET /index/detail/introduction
+[ info ] www.llsstop.com/index/detail/introduction [运行时间：0.123007s][吞吐率：8.13req/s] [内存消耗：2,020.67kb] [文件加载：45]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'detail',
+    2 => 'introduction',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/index/index/index/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Detail->introduction[ F:\wamp64\www\shanshanbaibia\application\index\controller\Detail.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\detail\introduction.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T12:57:07+08:00 ] ::1 ::1 GET /static/images/extra.png
+[ info ] www.llsstop.com/static/images/extra.png [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：1,669.17kb] [文件加载：39]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'static',
+    1 => 'images',
+    2 => 'extra.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/static/index/css/demo.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
