@@ -1460,9 +1460,15 @@
 )
 [ info ] [ LOG ] INIT File
 ---------------------------------------------------------------
+<<<<<<< HEAD
 [ 2017-08-23T11:06:32+08:00 ] ::1 ::1 GET /
 [ info ] www.git.com/ [运行时间：0.151009s][吞吐率：6.62req/s] [内存消耗：1,972.27kb] [文件加载：47]
 [ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+=======
+[ 2017-08-23T10:49:02+08:00 ] ::1 ::1 GET /shanshanbaibia/public/
+[ info ] localhost/shanshanbaibia/public/ [运行时间：0.048002s][吞吐率：20.83req/s] [内存消耗：2,031.08kb] [文件加载：45]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+>>>>>>> b12304e97b8752f5ae36b1e3f01c78a7112fe362
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
@@ -1473,6 +1479,7 @@
   ),
 )
 [ info ] [ HEADER ] array (
+<<<<<<< HEAD
   'host' => 'www.git.com',
   'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
   'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -1756,10 +1763,32 @@
 [ 2017-08-23T11:07:02+08:00 ] ::1 ::1 GET /admin/index/home.html
 [ info ] www.git.com/admin/index/home.html [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：1,898.55kb] [文件加载：47]
 [ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+=======
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/shanshanbaibia/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\wamp64\www\shanshanbaibia\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T10:49:02+08:00 ] ::1 ::1 GET /shanshanbaibia/public/
+[ info ] localhost/shanshanbaibia/public/ [运行时间：0.043002s][吞吐率：23.25req/s] [内存消耗：2,031.08kb] [文件加载：45]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+>>>>>>> b12304e97b8752f5ae36b1e3f01c78a7112fe362
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
+<<<<<<< HEAD
     0 => 'admin',
     1 => 'index',
     2 => 'home',
@@ -1793,10 +1822,38 @@
 [ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /admin/goods/products_list.html
 [ info ] www.git.com/admin/goods/products_list.html [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：3,172.87kb] [文件加载：55]
 [ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+=======
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/shanshanbaibia/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\wamp64\www\shanshanbaibia\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T10:49:47+08:00 ] ::1 ::1 GET /shanshanbaibia/public/
+[ info ] localhost/shanshanbaibia/public/ [运行时间：0.042003s][吞吐率：23.81req/s] [内存消耗：2,032.18kb] [文件加载：45]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+>>>>>>> b12304e97b8752f5ae36b1e3f01c78a7112fe362
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
+<<<<<<< HEAD
     0 => 'admin',
     1 => 'goods',
     2 => 'products_list',
@@ -1835,10 +1892,40 @@
 [ 2017-08-23T11:07:38+08:00 ] ::1 ::1 GET /uploads/20170822/49617d100443da23e0b1820c42f3110d.png,20170822/839111875c23f922d757f2168a84858f.png
 [ info ] www.git.com/uploads/20170822/49617d100443da23e0b1820c42f3110d.png,20170822/839111875c23f922d757f2168a84858f.png [运行时间：0.091005s][吞吐率：10.99req/s] [内存消耗：1,436.29kb] [文件加载：39]
 [ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+=======
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/shanshanbaibia/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\wamp64\www\shanshanbaibia\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T10:50:00+08:00 ] ::1 ::1 GET /
+[ info ] www.llsstop.com/ [运行时间：0.056003s][吞吐率：17.86req/s] [内存消耗：2,030.76kb] [文件加载：45]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+>>>>>>> b12304e97b8752f5ae36b1e3f01c78a7112fe362
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
+<<<<<<< HEAD
     0 => 'uploads',
     1 => '20170822',
     2 => '49617d100443da23e0b1820c42f3110d.png,20170822',
@@ -2127,10 +2214,15 @@
   array (
     0 => 'uploads',
     1 => 'png,png',
+=======
+    0 => '',
+    1 => NULL,
+>>>>>>> b12304e97b8752f5ae36b1e3f01c78a7112fe362
     2 => NULL,
   ),
 )
 [ info ] [ HEADER ] array (
+<<<<<<< HEAD
   'host' => 'www.git.com',
   'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; rv:54.0) Gecko/20100101 Firefox/54.0',
   'accept' => '*/*',
@@ -2325,10 +2417,32 @@
 [ 2017-08-23T11:07:41+08:00 ] ::1 ::1 GET /admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js
 [ info ] www.git.com/admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js [运行时间：0.252014s][吞吐率：3.97req/s] [内存消耗：1,762.35kb] [文件加载：47]
 [ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+=======
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\wamp64\www\shanshanbaibia\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T10:50:01+08:00 ] ::1 ::1 GET /static/index/img/glyphicons-halflings.png
+[ info ] www.llsstop.com/static/index/img/glyphicons-halflings.png [运行时间：0.091006s][吞吐率：10.99req/s] [内存消耗：1,668.08kb] [文件加载：39]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+>>>>>>> b12304e97b8752f5ae36b1e3f01c78a7112fe362
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
+<<<<<<< HEAD
     0 => 'admin',
     1 => 'goods',
     2 => '__ADMI_PATH__Widget',
@@ -2393,10 +2507,34 @@
 [ 2017-08-23T11:09:35+08:00 ] ::1 ::1 GET /admin/goods/pictureadd.html
 [ info ] www.git.com/admin/goods/pictureadd.html [运行时间：0.059004s][吞吐率：16.95req/s] [内存消耗：1,833.83kb] [文件加载：46]
 [ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+=======
+    0 => 'static',
+    1 => 'index',
+    2 => 'img',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/static/index/css/bootstrap.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T10:50:11+08:00 ] ::1 ::1 GET /index/detail/introduction
+[ info ] www.llsstop.com/index/detail/introduction [运行时间：0.071004s][吞吐率：14.08req/s] [内存消耗：2,019.48kb] [文件加载：45]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+>>>>>>> b12304e97b8752f5ae36b1e3f01c78a7112fe362
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
+<<<<<<< HEAD
     0 => 'admin',
     1 => 'goods',
     2 => 'pictureadd',
@@ -2501,10 +2639,39 @@
 [ 2017-08-23T11:09:35+08:00 ] ::1 ::1 GET /admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js
 [ info ] www.git.com/admin/goods/__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：1,762.35kb] [文件加载：47]
 [ info ] [ LANG ] D:\wamp\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+=======
+    0 => 'index',
+    1 => 'detail',
+    2 => 'introduction',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Detail->introduction[ F:\wamp64\www\shanshanbaibia\application\index\controller\Detail.php ]
+[ info ] [ VIEW ] F:\wamp64\www\shanshanbaibia\public/../application/index\view\detail\introduction.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-08-23T10:50:11+08:00 ] ::1 ::1 GET /static/images/extra.png
+[ info ] www.llsstop.com/static/images/extra.png [运行时间：0.068004s][吞吐率：14.71req/s] [内存消耗：1,668.36kb] [文件加载：39]
+[ info ] [ LANG ] F:\wamp64\www\shanshanbaibia\thinkphp\lang\zh-cn.php
+>>>>>>> b12304e97b8752f5ae36b1e3f01c78a7112fe362
 [ info ] [ ROUTE ] array (
   'type' => 'module',
   'module' => 
   array (
+<<<<<<< HEAD
     0 => 'admin',
     1 => 'goods',
     2 => '__ADMI_PATH__Widget',
@@ -2583,3 +2750,23 @@
 [ sql ] [ DB ] CONNECT:[ UseTime:0.014000s ] mysql:dbname=snacks;host=127.0.0.1;charset=utf8
 [ sql ] [ SQL ] SHOW COLUMNS FROM `snacks_details` [ RunTime:0.006001s ]
 [ error ] [10501]SQLSTATE[HY000]: General error: 1364 Field 'create_time' doesn't have a default value[D:\wamp\www\shanshanbaibia\thinkphp\library\think\db\Connection.php:451]
+=======
+    0 => 'static',
+    1 => 'images',
+    2 => 'extra.png',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.llsstop.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.llsstop.com/static/index/css/demo.css',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+>>>>>>> b12304e97b8752f5ae36b1e3f01c78a7112fe362
