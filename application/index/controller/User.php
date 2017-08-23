@@ -87,10 +87,6 @@ class User extends Controller
 	{
 		return $this->fetch();
 	}
-	public function email()
-	{
-		return $this->fetch();	
-	}
 	public function safety()
 	{
 		return $this->fetch();
