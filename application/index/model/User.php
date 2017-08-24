@@ -26,16 +26,22 @@ class User extends Model
 		 	$regip = '127.0.0.1';
 		 }
 		 $regip= ip2long($regip);
-		 $regtime = time();
-		 $updatetime = time();
 		 $userInfo = new User;
-		 $userInfo->data(['uname'=>"$uname",'pwd'=>"$pwd",'phone'=>"$phone",'regip'=>"$regip",'regtime'=>"$regtime",'updatetime'=>"$updatetime"]);
-		 $result =  $userInfo->save();
-		 if(strcasecmp($pwd, $repwd)!=0){
-		 	return false;
-		 }else{
+		 $userInfo->data(
+		 	[
+		 		'uname' => "$uname",
+			 	'pwd' => "$pwd",
+			 	'phone' => "$phone",
+			 	'regip' => "$regip",
+			 	
+		 	]);
+		$result =  $userInfo->save();
+		if($result){
 			return $result;
-		 } 
+		} else{ 
+			return false;
+		}
+		
 	}
 	// 用户头像的修改
 	public function imgInfo($path )
@@ -64,14 +70,31 @@ class User extends Model
 		$uid = session('userid');
 		$uname = $data['uname'];
 		$sex = $data['sex'];
-		$birthday = $data['birthday'];
+		$birthday = $data['result'];
 		$phone = $data['phone'];
 		$email = $data['email'];
-		$result = Db::name('user')->where('uid',"$uid")->update(['uname'=>"$uname",'sex'=>"$sex",'birthday'=>"$birthday",'phone'=>"$phone",'email'=>"$email"]);
-		dump($result);
+		$result = Db::name('user')
+		->where('uid',"$uid")
+		->update(
+			[
+				'uname'=>"$uname",
+				'sex'=>"$sex",
+				'birthday'=>"$birthday",
+				'phone'=>"$phone",
+				'email'=>"$email"
+			]);
 		if($result){
 			return $result;
 		} else {
+			return false;
+		}
+	}
+	public function updatePhone($phoneNum, $uid)
+	{
+		$result = Db::name('user')->where('uid',"$uid")->update(['phone'=>"$phoneNum"]);
+		if($result){
+			return $result;
+		}else{
 			return false;
 		}
 	}

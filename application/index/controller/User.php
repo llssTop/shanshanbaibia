@@ -1,16 +1,21 @@
 <?php
 namespace app\index\controller;
 use app\index\model\User as UserModel;
+use app\index\model\Address;
 use think\Controller;
 use think\Validate;
 use think\Session;
+use think\Request;
+use think\Ucpaas;
 class User extends Controller
 {
 	protected $user;
+	protected $addre;
 	public function _initialize()
 	{
 		parent:: _initialize();
 		$this->user = new UserModel;
+		$this->addre = new Address;
 	}
 	public function information()
 	{
@@ -45,13 +50,13 @@ class User extends Controller
 			echo json_encode(['errcode'=>0 ,'info'=>'不存在']);
 		};
 	}
-	public function checkCode(Request $request)
+	public function checkVert(Request $request)
 	{
 		if (true !== $this->validate($request->param(),['code|验证码'=>'require|captcha'
 			])) {
-					$this->error('验证码错误');
+					echo json_encode(['errcode'=>1 ,'info'=>'验证码正确']);
 				} else {
-					$this->success('验证码正确');
+					echo json_encode(['errcode'=>0 ,'info'=>'验证码错误']);
 			}
 	}
 	public function doregister(UserModel $usermodel)
@@ -69,7 +74,7 @@ class User extends Controller
         $pwd = $_POST['pwd'];
 		$userInfo = $this->user->checkinfo($uname);
 		if($userInfo) {
-			$arr = [];
+			//$arr = [];
 			if(strcasecmp($pwd, $userInfo['pwd'])==0){
 				/*foreach ($userInfo as $key => $value) {
 					$arr[$key] = $value;
@@ -79,7 +84,9 @@ class User extends Controller
 				session('grade',$userInfo['grade']);
 				session('uname',$userInfo['uname']);
 				session('uid',$userInfo['uid']);
+				session('phone',$userInfo['phone']);
 				Session::set('username',"$uname");
+				session('avatar',$userInfo['avatar']);
 				//var_dump(Session::get('username'));
 				$uid = $userInfo['uid'];
 				Session::set('userid',"$uid");
@@ -96,16 +103,26 @@ class User extends Controller
 		session(null);
 		$this->success('退出登录成功',url('index/user/login'));
 	}
-	public function address()
+	public function address(Address $address)
 	{
+
+		$result = $address->checkAddress();
+		//dump($result);
+		$this->assign('result',$result);
 		return $this->fetch();
 	}
 	public function bindphone()
 	{
+		$phone = session('phone');
+		$this->assign('phone',$phone);
 		return $this->fetch();
 	}
 	public function safety()
 	{
+		$vip = session('vip');
+		$avatar = session('avatar');
+		$this->assign('vip',$vip);
+		$this->assign('avatar',$avatar);
 		return $this->fetch();
 	}
 	public function upload()
@@ -118,6 +135,7 @@ class User extends Controller
 			$imgPath =  $info->getSaveName();
 			$imgPath = str_replace('\\', '/', $imgPath);
 			$imgData = $this->user->imgInfo($imgPath);
+			//session('avatar',$imgPath);
 			if($imgData){
 				$this->success('头像修改成功',url('index/user/information'));
 			}
@@ -126,7 +144,7 @@ class User extends Controller
 		   echo $file->getError();
 		}
 	}
-	public function changInfo()
+	public function upInfo()
 	{
 		if(!empty($_POST)){
 			$data = $_POST;
@@ -138,4 +156,71 @@ class User extends Controller
 			}
 		}
 	}
+	public function password()
+	{
+		$this->fetch();
+	}
+	public function save(Address $address)
+	{
+		$result = $address->addAddress($_POST);
+		if($result){
+			echo json_encode(['errcode'=>1 ,'info'=>'成功']);
+		} else{
+			echo json_encode(['errcode'=>0 ,'info'=>'失败']);
+		}
+	}
+	// 用户删除地址
+	public function deleteInfo()
+	{
+		$aid = $_GET['aid'];
+		$result = $this->addre->delInfo($aid);
+		if($result){
+			$this->success('成功',url('index/user/address'));
+		} else{
+			$this->error('失败',url('index/user/address'));
+		}
+	}
+	public function dosafety(){
+	    //初始化必填
+	    $options['accountsid']='4d0cea011be406a1c05d1863df30a28b';
+	    $options['token']='e53d3077cab7a59ccc45b9f9803b0f2b';
+	    $str = '12345678900987654321';
+	    $str1 = substr(str_shuffle($str),0,4);
+	    //$_SESSION['phonecode'] = $str1;
+	    session('phonecode',$str1);
+	    //初始化 $options必填
+	    $ucpass = new Ucpaas($options);
+	    //开发者账号信息查询默认为json或xml
+	    //短信验证码（模板短信）,默认以65个汉字（同65个英文）为一条（可容纳字数受您应用名称占用字符影响），超过长度短信平台将会自动分割为多条发送。分割后的多条短信将按照具体占用条数计费。
+	    $appId = "d3083be7d515445499d357e607842227";
+	    $to = $_POST['phone'];
+	    $templateId = "102268";
+	    $param=$str1;
+	    echo json_encode(array('notice'=>$str1));
+	   // $ucpass->templateSMS($appId,$to,$templateId,$param);
+    }
+    public function upPhone()
+    {
+    	$phoneNum = $_POST['newPhone'];
+    	$uid = session('userid');
+    	$result = $this->user->updatePhone($phoneNum,$uid);
+    	if($result){
+    		echo json_encode(['errcode'=>1 ,'info'=>'手机变更成功']);
+    	}else{
+    		echo json_encode(['errcode'=>0 ,'info'=>'手机号变更失败']);
+    	}
+    }
+    /**
+     * tp5邮件
+     * @param
+     * @author staitc7 <static7@qq.com>
+     * @return mixed
+     */
+  /*  public function email() {
+        $toemail='static7@qq.com';
+        $name='static7';
+        $subject='QQ邮件发送测试';
+        $content='恭喜你，邮件测试成功。';
+        dump(send_mail($toemail,$name,$subject,$content));
+    }*/
 }

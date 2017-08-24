@@ -1,6 +1,5 @@
 
 		<link href="__HCSS_PATH__infstyle.css" rel="stylesheet" type="text/css">
-	
 		<!--头 -->
 		
             <div class="nav-table">
@@ -35,22 +34,24 @@
 						<div class="user-infoPic">
 
 							<div class="filePic">
-								<img class="am-circle am-img-thumbnail" src="__HIMG_PATH__getAvatar.do.jpg" alt="" />
+								<img class="am-circle am-img-thumbnail" src="__APIC_PATH__{$avatar}" alt="" />
 							</div>
 
 							<p class="am-form-help">头像</p>
 
 							<div class="info-m">
-								<div><b>用户名：<i>小叮当</i></b></div>
+								<div><b>用户名：<i>{php}echo session('username');{/php}</i></b></div>
 								<div class="u-level">
 									<span class="rank r2">
-							             <s class="vip1"></s><a class="classes" href="#">铜牌会员</a>
+							             <s class="vip1"></s><a class="classes" href="#">{switch $vip} {case value="0" break}铜牌会员{/case}
+											{case value="1" break}银牌会员{/case} {case value="2" break}金牌会员{/case}{default /}铜牌会员
+											{/switch}</a>
 						            </span>
 								</div>
 								<div class="u-safety">
 									<a href="safety.html">
 									 账户安全
-									<span class="u-profile"><i class="bc_ee0000" style="width: 60px;" width="0">60分</i></span>
+									<span class="u-profile"><i class="bc_ee0000" style="width: 60px;" width="0">{php}echo session('grade');{/php}</i></span>
 									</a>
 								</div>
 							</div>
@@ -59,25 +60,13 @@
 						<div class="check">
 							<ul>
 								<li>
-									<i class="i-safety-lock"></i>
-									<div class="m-left">
-										<div class="fore1">登录密码</div>
-										<div class="fore2"><small>为保证您购物安全，建议您定期更改密码以保护账户安全。</small></div>
-									</div>
-									<div class="fore3">
-										<a href="password.html">
-											<div class="am-btn am-btn-secondary">修改</div>
-										</a>
-									</div>
-								</li>
-								<li>
 									<i class="i-safety-iphone"></i>
 									<div class="m-left">
 										<div class="fore1">手机验证</div>
 										<div class="fore2"><small>您验证的手机：186XXXXXXXX 若已丢失或停用，请立即更换</small></div>
 									</div>
 									<div class="fore3">
-										<a href="bindphone.html">
+										<a href="{:url('index/user/bindphone')}">
 											<div class="am-btn am-btn-secondary">换绑</div>
 										</a>
 									</div>
@@ -89,7 +78,7 @@
 										<div class="fore2"><small>您验证的邮箱：5831XXX@qq.com 可用于快速找回登录密码</small></div>
 									</div>
 									<div class="fore3">
-										<a href="email.html">
+										<a href="{:url('index/user/email')}">
 											<div class="am-btn am-btn-secondary">换绑</div>
 										</a>
 									</div>

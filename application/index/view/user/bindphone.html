@@ -48,16 +48,16 @@
 						<div class="am-form-group bind">
 							<label for="user-phone" class="am-form-label">验证手机</label>
 							<div class="am-form-content">
-								<span id="user-phone">186XXXX0531</span>
+								<span id="user-phone"><?php echo $phone; ?></span>
 							</div>
 						</div>
 						<div class="am-form-group code">
 							<label for="user-code" class="am-form-label">验证码</label>
 							<div class="am-form-content">
-								<input type="tel" id="user-code" placeholder="短信验证码">
+								<input type="tel" id="user-code" placeholder="短信验证码" onblur = "doreg()">
 							</div>
 							<a class="btn" href="javascript:void(0);" onclick="sendMobileCode();" id="sendMobileCode">
-								<div class="am-btn am-btn-danger">验证码</div>
+								<div class="am-btn am-btn-danger" id="code">验证码</div>
 							</a>
 						</div>
 						<div class="am-form-group">
@@ -67,25 +67,23 @@
 							</div>
 						</div>
 						<div class="am-form-group code">
-							<label for="user-new-code" class="am-form-label">验证码</label>
+							<label for="user-new-code" class="am-form-label"  id = "phoneOne()">验证码</label>
 							<div class="am-form-content">
-								<input type="tel" id="user-new-code" placeholder="短信验证码">
+								<input type="tel" id="user-new-code" placeholder="短信验证码"  onblur = "redoreg()">
 							</div>
-							<a class="btn" href="javascript:void(0);" onclick="sendMobileCode();" id="sendMobileCode">
-								<div class="am-btn am-btn-danger">验证码</div>
+							<a class="btn" href="javascript:void(0);" onclick = "getPhone()" id="sendMobileCode" >
+								<div class="am-btn am-btn-danger" id ="phoneTwo">验证码</div>
 							</a>
 						</div>
 						<div class="info-btn">
-							<div class="am-btn am-btn-danger">保存修改</div>
+							<div class="am-btn am-btn-danger" id="savePhone">保存修改</div>
 						</div>
 
 					</form>
 
 				</div>
 				<!--底部-->
-				
 			</div>
-
 			<div style="position:absolute; top:190px; left:65px;">
 			<aside class="menu">
 				<ul>
@@ -128,9 +126,89 @@
 
 				</ul>
 			</aside>
+	    </div>
 		</div>
-		</div>
-
 	</body>
-
 </html>
+<script type="text/javascript">
+	$("#user-new-phone").blur(function(){
+		var Phone = $("#user-new-phone").val();
+		if(!(/^1[3|4|5|7|8][0-9]{9}$/.test(Phone)))
+        {
+        	$("#user-new-phone").css('border', '1px solid red');
+        	$("#user-new-phone").val('手机格式不合法');
+            return false;
+        }
+        return true;
+	})
+</script>
+<script type="text/javascript">
+	var yanzhengma;
+	function sendMobileCode()
+	{
+		var phonenum = $("#user-phone").val();
+		$.post("{:url('index/user/dosafety')}",{phone: phonenum},function(data){
+			yanzhengma = data['notice'];
+			console.log(yanzhengma);
+		},'json');
+	}
+	 function doreg(){
+        if($("#user-code").val() == yanzhengma){
+            return true;
+        }else{
+           alert('验证码错误，请稍后重试');
+        }
+   }
+</script>
+<script type="text/javascript">
+var yanzhengcode;
+var phone;
+var flag = false;
+   function getPhone(){
+    flag = false;
+    var big;
+    if($("#user-new-phone").val() == ''){
+        alert('请输入手机号');
+    }else{
+        $("#sendMobileCode").removeAttr('onclick');
+        if(!flag){
+            flag = true;
+            var num = 60;
+            $("#sendMobileCode").val('已发送'+ '(' + num-- + ')');
+            phone = $("#user-new-phone").val();
+            alert(phone);
+            $.post("{:url('index/user/dosafety')}",{phone: phone},function(data){
+				yanzhengcode = data['notice'];
+				console.log(yanzhengcode);
+			},'json');
+            
+            if(flag){
+                big = setInterval(function(){
+                    $("#sendMobileCode").val('已发送'+ '(' + num-- + ')');
+                    if(num == -1){
+                        $("#sendMobileCode").val('获取');
+                        num = 60;
+                        flag = false;
+                        clearInterval(big);
+                    }
+                },1000);
+            }
+        }
+    }
+  }
+   function redoreg(){
+        if($("#user-new-code").val() == yanzhengcode){
+            return true;
+        }else{
+           alert('验证码错误，请稍后重试');
+        }
+   }
+</script>
+<script type="text/javascript">
+	$("#savePhone").click(function(){
+		var newPhone = $("#user-new-phone").val();
+		$.post("{:url('index/user/upPhone')}",{newPhone:newPhone},function(data){
+			console.log(data);
+		},'json');
+	});
+</script>

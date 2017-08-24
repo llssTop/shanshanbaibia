@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1503499934;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1503499465;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1503555864;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1503509270;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -15,7 +15,7 @@
 		<link href="__HCSS_PATH__demo.css" rel="stylesheet" type="text/css" />
 		<link href="__HCSS_PATH__cartstyle.css" rel="stylesheet" type="text/css" />
 		<link href="__HCSS_PATH__optstyle.css" rel="stylesheet" type="text/css" />
-		<script src="__HJS_PATH__jquery.min.js"></script>
+		<script src="__HJS_PATH__jQuery-1.11.3.js"></script>
 		<script src="__HJS_PATH__amazeui.min.js"></script>
 		
 		<script src="__HJS_PATH__bootstrap.min.js"></script>
@@ -86,7 +86,7 @@
 						<div class="clear"></div>
 					</div>
 
-<script src="__HJS_PATH__jquery.min.js"></script>
+<script src="__HJS_PATH__jQuery-1.11.3.js"></script>
             <div class="nav-table">
 					   <div class="long-title"><span class="all-goods">全部分类</span></div>
 					   <div class="nav-cont">
@@ -172,18 +172,20 @@
 								</div>
 								<div class="am-form-group" >
 									<label for="user-birth" class="am-form-label">生日</label>
-									<div id="box" style="float:left; width:80px;height:60px;" >
-									      <select name="sel1" id="sel1">
-									        <option value="year">年</option>
-									      </select> 
-									      <select name="sel2" id="sel2">
-									        <option value="month">月</option>
-									      </select> 
-									      <select name="sel3" id="sel3">
-									        <option value="day">日</option>
-									      </select>
-									      <span id="result"></span>
-									    </div>
+									
+										<div id="box" style="height:50px;height:60px; width:700px;float:left;" >
+										      <select name="sel1" id="sel1"  style="float:left;width:200px;">
+										        <option value="year">年</option>
+										      </select> 
+										      <select name="sel2" id="sel2" style="float:left;width:200px;" >
+										        <option value="month">月</option>
+										      </select> 
+										      <select name="sel3" id="sel3" style="float:left;width:200px;" >
+										        <option value="day">日</option>
+										      </select>
+										      <span id="result" style="clear:both;" name="birthday"></span>
+									</div>
+							
 								</div>
 								<div class="am-form-group">
 									<label for="user-phone" class="am-form-label">电话</label>
@@ -222,6 +224,25 @@
 								<div class="info-btn">
 									<div class="am-btn am-btn-danger" id ="change">保存修改</div>
 								</div>
+								<script type="text/javascript">
+								     $("#change").click(function(){
+								     	$.post("<?php echo url('index/user/upinfo'); ?>",
+								     		{
+								     			uname:$("#user-name2").val(),
+									     		sex:$("input[type='radio']:checked").val(),
+									     		result:$("#sel1").val() + '/' + $("#sel2").val() + '/' +$("#sel3").val(),
+									     		phone:$("#user-phone").val(),
+									     		email:$("#user-email").val()
+								     	},function(data){
+								     		//console.log(data);
+												if(data['errcode']=='1'){
+													 $this->success('成功',url('index/user/information'));
+												}else{
+													 $this->error('失败',url('index/user/information'));
+												}
+											},'json');
+								     });
+							</script>
 							</form>
 						</div>
 					</div>
@@ -274,19 +295,7 @@
 		</div>
 	</body>
 </html>
-<script type="text/javascript">
-     $("#change").click(function(){
-     	$.post('/index/user/changInfo/',
-     		{uname:$("#user-name2").val(),
-     		sex:$("input[type='radio']:checked").val(),
-     		result:$("#result").val(),
-     		phone:$("#user-phone").val(),
-     		email:$("#user-email").val()
-     	},function(data){
-				console.log(data);
-			},'json');
-     });
-</script>
+
 <script>
    //生成日期
    function creatDate()
@@ -407,7 +416,6 @@
 	    if(sel1.value !='year' && sel2.value != 'month' && sel3.value !='day')
 	    {
 	      var result = document.getElementById('result').innerText = sel1.value + '/' + sel2.value + '/' + sel3.value;
-	      console.log(result);
 	      alert('日期已经设置完毕');
 	    } 
     }
