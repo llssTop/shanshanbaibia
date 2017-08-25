@@ -125,6 +125,7 @@ class User extends Controller
 		$this->assign('avatar',$avatar);
 		return $this->fetch();
 	}
+	//头像上传
 	public function upload()
 	{
 		// 获取表单上传文件 例如上传了001.jpg
@@ -156,10 +157,7 @@ class User extends Controller
 			}
 		}
 	}
-	public function password()
-	{
-		$this->fetch();
-	}
+	// 新增收货地址
 	public function save(Address $address)
 	{
 		$result = $address->addAddress($_POST);
@@ -223,4 +221,15 @@ class User extends Controller
         $content='恭喜你，邮件测试成功。';
         dump(send_mail($toemail,$name,$subject,$content));
     }*/
+    public function changepwd()//发送邮件来修改密码
+	{
+	    if(isset($_POST['submit']))
+	    {
+	        if(SendMail($_POST['mail'],$_POST['title'],$_POST['content'])){
+	        	 $this->success('发送成功！');
+	        	}else {
+	        		$this->error('发送失败');
+	        	}
+	    }
+	 }
 }

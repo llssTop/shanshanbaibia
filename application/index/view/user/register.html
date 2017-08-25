@@ -128,7 +128,7 @@
 	{
 		var code = $("#code").val();
 		$.post("{:url('index/user/checkVert')}",{code:code},function(data){
-			console.log(data);
+			//console.log(data);
 			if(data['errcode'] == '1'){
 				checkVer = 'true';
 				return true;

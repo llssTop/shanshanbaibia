@@ -47,16 +47,16 @@
 						<div class="am-form-group">
 							<label for="user-email" class="am-form-label">验证邮箱</label>
 							<div class="am-form-content">
-								<input type="email" id="user-email" placeholder="请输入邮箱地址">
+								<input type="email" id="user-email" name= ="mail" placeholder="请输入邮箱地址">
 							</div>
 						</div>
 						<div class="am-form-group code">
-							<label for="user-code" class="am-form-label">验证码</label>
+							<label for="user-code" class="am-form-label">题目</label>
 							<div class="am-form-content">
-								<input type="tel" id="user-code" placeholder="验证码">
+								<input type="tel" id="user-code" placeholder="题目">
 							</div>
-							<a class="btn" href="javascript:void(0);" onclick="sendMobileCode();" id="sendMobileCode">
-								<div class="am-btn am-btn-danger">验证码</div>
+							<a class="btn" href="javascript:void(0);" onclick="sendEmailCode();" id="sendMobileCode">
+								<div class="am-btn am-btn-danger">发送</div>
 							</a>
 						</div>
 						<div class="info-btn">
@@ -67,7 +67,12 @@
 
 				</div>
 				<!--底部-->
-			
+			<script type="text/javascript">
+				function sendEmailCode()
+				{
+					
+				}
+			</script>
 			</div>
 
 			<div style="position:absolute; top:190px; left:65px;">
