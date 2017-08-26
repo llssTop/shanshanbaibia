@@ -1,5 +1,6 @@
 <?php
 namespace app\index\controller;
+use think\Smtp as smtptwo;
 use app\index\model\User as UserModel;
 use app\index\model\Address;
 use think\Controller;
@@ -33,10 +34,6 @@ class User extends Controller
 		return $this->fetch();
 	}
 	public function email()
-	{
-		return $this->fetch();
-	}
-	public function phone()
 	{
 		return $this->fetch();
 	}
@@ -208,28 +205,31 @@ class User extends Controller
     		echo json_encode(['errcode'=>0 ,'info'=>'手机号变更失败']);
     	}
     }
-    /**
-     * tp5邮件
-     * @param
-     * @author staitc7 <static7@qq.com>
-     * @return mixed
-     */
-  /*  public function email() {
-        $toemail='static7@qq.com';
-        $name='static7';
-        $subject='QQ邮件发送测试';
-        $content='恭喜你，邮件测试成功。';
-        dump(send_mail($toemail,$name,$subject,$content));
-    }*/
-    public function changepwd()//发送邮件来修改密码
-	{
-	    if(isset($_POST['submit']))
-	    {
-	        if(SendMail($_POST['mail'],$_POST['title'],$_POST['content'])){
-	        	 $this->success('发送成功！');
-	        	}else {
-	        		$this->error('发送失败');
-	        	}
-	    }
-	 }
+    public function checkemail()
+    {
+    	/*var_dump($_POST);die;
+    	$smtpserver = "smtp.163.com";//SMTP服务器
+		$smtpserverport =25;//SMTP服务器端口
+		$smtpusermail = "18317775325@163.com";//SMTP服务器的用户邮箱
+		$smtpemailto = $_POST['toemail'];//发送给谁
+		// $smtpemailto = '19409721881@qq.com';
+		$smtpuser = "18317775325";//SMTP服务器的用户帐号，注：部分邮箱只需@前面的用户名
+		$smtppass = "llssTop66";//SMTP服务器的用户密码
+		$mailtitle = $_POST['title'];//
+		// $mailtitle = 'asdfad';
+		$mailcontent = "{$_POST['content']}";
+	
+		$mailtype = "TXT";//邮件格式（HTML/TXT）,TXT为文本邮件
+		//************************ 配置信息 ****************************
+		$smtp = new smtptwo($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//这里面的一个true是表示使用身份验证,否则不使用身份验证.
+		$smtp->debug = true;//是否显示发送的调试信息
+		// $state = $smtp->sendmail($smtpemailto, $smtpusermail, $mailtitle, $mailcontent, $mailtype);
+		if($state == ""){
+			//echo json_encode(['errcode'=>0 ,'info'=>'发送失败']);
+			$this->success('发送成功');
+		}else{
+			$this->error('发送失败');
+			//echo json_encode(['errcode'=>1 ,'info'=>'发送成功']);
+		}*/
+    }
 }

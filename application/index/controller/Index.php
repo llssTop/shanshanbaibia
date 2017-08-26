@@ -3,32 +3,31 @@ namespace app\index\controller;
 use think\Request;
 use think\Controller;
 use think\Validate;
-
-use app\index\model\Detail;
+use app\index\model\Details;
 use app\index\model\Category;
 class Index extends controller
 {
 	protected $category;
-	
+	protected $details;
 	public function _initialize()
 	{
 		parent:: _initialize();
 		$this->category = new Category;
+		$this->details = new Details;
 
 	}
 	public function index(Request $request)
 	{
 		$re = $this->category->list();
-		//$newarr = $this->GetTree($re,0);
-		//dump($re);
 		$small =$this->category->smallList();
-		//dump($small);
 		$litter =$this->category->litterList();
 		$alitter =$this->category->alitterList();
-		//$cid =$request->param('cid');
-		/*dump($cid);die;
-		$detailInfo = new Detail;
-		$re*///sult = $detailInfo->seleDetail(); 
+		// 相关的食品的详细信息
+		$detailsInfo = $this->details->checkDetail();
+		//dump($detailsInfo);die;
+		if($detailsInfo){
+			$this->assign('detInfoma',$detailsInfo);
+		}
 		$this->assign('newarr',$re);
 		$this->assign('small',$small);
 		$this->assign('litter',$litter);

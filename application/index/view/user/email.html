@@ -43,35 +43,40 @@
 							<div class="u-progress-bar-inner"></div>
 						</div>
 					</div>
-					<form class="am-form am-form-horizontal">
+					<form class="am-form am-form-horizontal" action="{:url('index/user/checkemail')}" method="post">
 						<div class="am-form-group">
 							<label for="user-email" class="am-form-label">验证邮箱</label>
-							<div class="am-form-content">
-								<input type="email" id="user-email" name= ="mail" placeholder="请输入邮箱地址">
-							</div>
+							
+								<input type="email" id="user-email" name ="toemail" placeholder="请输入邮箱地址">
+							
 						</div>
-						<div class="am-form-group code">
-							<label for="user-code" class="am-form-label">题目</label>
-							<div class="am-form-content">
-								<input type="tel" id="user-code" placeholder="题目">
-							</div>
-							<a class="btn" href="javascript:void(0);" onclick="sendEmailCode();" id="sendMobileCode">
-								<div class="am-btn am-btn-danger">发送</div>
-							</a>
+						<div class="am-form-group">
+							<label for="user-email" class="am-form-label">题目</label>
+							
+								<input type="text" id="user-title" name="title" placeholder="请输入题目">
+							
 						</div>
-						<div class="info-btn">
-							<div class="am-btn am-btn-danger">保存修改</div>
+						<div class="am-form-group">
+							<label for="user-email" class="am-form-label">内容</label>
+							<textarea name="content" cols="50" rows="5" id="user-content"></textarea>
 						</div>
-
+						<div class="info-btn" style="margin-top:80px;">
+							<!-- <div class="am-btn am-btn-danger" id="sendEmail" >保存修改</div> -->
+							<div><input type="submit" value="提交"></div>
+						</div>
 					</form>
-
 				</div>
 				<!--底部-->
 			<script type="text/javascript">
-				function sendEmailCode()
-				{
-					
-				}
+				/*$("#sendEmail").click(function(){
+					$.post("{:url('index/user/checkemail')}",{
+						toemail:$("#user-email").val(),
+						title:$("#user-title").val(),
+						content:$("#user-content").val(),
+					},function(data){
+						cnosole.log(data);
+					},'json');
+				});*/
 			</script>
 			</div>
 
