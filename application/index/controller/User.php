@@ -241,6 +241,8 @@ class User extends Controller
 			//echo json_encode(['errcode'=>0 ,'info'=>'发送失败']);
 			$this->success('发送失败');
 		}else{
+			$email = $_POST['toemail'];
+			$ok = $this->user->updateEmail($email);
 			$this->error('发送成功');
 			//echo json_encode(['errcode'=>1 ,'info'=>'发送成功']);
 		}

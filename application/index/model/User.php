@@ -98,4 +98,9 @@ class User extends Model
 			return false;
 		}
 	}
+	public function updateEmail($email)
+	{
+		$uid = session('userid');
+		$result = Db::name('user')->where('uid',"$uid")->update(['email'=>"$email"]);
+	}
 }

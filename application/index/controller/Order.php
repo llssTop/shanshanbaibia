@@ -4,7 +4,7 @@ use think\Controller;
 use think\Validate;
 use think\Request;
 use think\Session;
-use think\Cookie;
+
 use app\index\model\Cart;
 
 class Order extends Controller
@@ -31,7 +31,13 @@ class Order extends Controller
 		//未登录状态加入购物车
 		if(empty(session('userid'))){
 			$arr =[$goodsid=>$data];
-			cookie("$goodsid",$arr);
+			session("$goodsid",$arr);
+			$a = $request->session();
+			dump($a);die;
+			foreach ($a as $key => $value) {
+				dump($key);
+				dump($value);die;
+			}
 		} else{
 			// 登录状态加入购物车
 			$a = $request->cookie();
@@ -43,9 +49,14 @@ class Order extends Controller
 					//判断如果在数据库里面能找到当前的商品id 让商品的数量增加。
 					$re = $this->cart->checkSid($key);
 					if($re){
+						// 更新数据库的sid 的 count 数量。
 						$cartnum = $this->cart->updateShopNum($key);
-						dump($cartnum);
+						//dump($cartnum);
+					} else{
+						//将值插入到数据库，新增一个
+						$re = $this->cart->addShop();
 					}
+
 					
 				}
 			} else{
