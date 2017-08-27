@@ -1,6 +1,6 @@
 <?php
 namespace app\index\controller;
-use think\Smtp as smtptwo;
+use think\Smtp;
 use app\index\model\User as UserModel;
 use app\index\model\Address;
 use think\Controller;
@@ -8,6 +8,7 @@ use think\Validate;
 use think\Session;
 use think\Request;
 use think\Ucpaas;
+
 class User extends Controller
 {
 	protected $user;
@@ -51,15 +52,27 @@ class User extends Controller
 	{
 		if (true !== $this->validate($request->param(),['code|验证码'=>'require|captcha'
 			])) {
-					echo json_encode(['errcode'=>1 ,'info'=>'验证码正确']);
-				} else {
 					echo json_encode(['errcode'=>0 ,'info'=>'验证码错误']);
+				} else {
+					echo json_encode(['errcode'=>1 ,'info'=>'验证码成功']);
 			}
+		/*	$validate = new Validate([
+			'captcha|验证码'=>'require|captcha'
+			]);
+			$data = [
+				'captcha' => input('code')
+			];
+			if (!$validate->check($data)) {
+				dump($validate->getError());
+			} else {
+				dump('正确');
+			}*/
 	}
 	public function doregister(UserModel $usermodel)
 	{
 		$data = $usermodel->insertData($_POST);
 		if($data){
+			session('username',$_POST['uname']);
 			$this->success('注册成功',url('index/index/index'));
 		}else {
 			$this->error('注册失败',url('index/user/register'));
@@ -68,7 +81,7 @@ class User extends Controller
 	public function dologin()
 	{
         $uname = $_POST['uname'];
-        $pwd = $_POST['pwd'];
+        $pwd = md5($_POST['pwd']);
 		$userInfo = $this->user->checkinfo($uname);
 		if($userInfo) {
 			//$arr = [];
@@ -207,7 +220,7 @@ class User extends Controller
     }
     public function checkemail()
     {
-    	/*var_dump($_POST);die;
+    	//var_dump($_POST);die;
     	$smtpserver = "smtp.163.com";//SMTP服务器
 		$smtpserverport =25;//SMTP服务器端口
 		$smtpusermail = "18317775325@163.com";//SMTP服务器的用户邮箱
@@ -221,15 +234,15 @@ class User extends Controller
 	
 		$mailtype = "TXT";//邮件格式（HTML/TXT）,TXT为文本邮件
 		//************************ 配置信息 ****************************
-		$smtp = new smtptwo($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//这里面的一个true是表示使用身份验证,否则不使用身份验证.
+		$smtp = new Smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//这里面的一个true是表示使用身份验证,否则不使用身份验证.
 		$smtp->debug = true;//是否显示发送的调试信息
-		// $state = $smtp->sendmail($smtpemailto, $smtpusermail, $mailtitle, $mailcontent, $mailtype);
+		$state = $smtp->sendmail($smtpemailto, $smtpusermail, $mailtitle, $mailcontent, $mailtype);
 		if($state == ""){
 			//echo json_encode(['errcode'=>0 ,'info'=>'发送失败']);
-			$this->success('发送成功');
+			$this->success('发送失败');
 		}else{
-			$this->error('发送失败');
+			$this->error('发送成功');
 			//echo json_encode(['errcode'=>1 ,'info'=>'发送成功']);
-		}*/
+		}
     }
 }

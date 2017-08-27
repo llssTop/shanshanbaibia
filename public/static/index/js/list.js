@@ -115,8 +115,8 @@ $(document).ready(function() {
 	$('#min').attr('disabled', true);
 	//数量增加操作
 	$("#add").click(function() {
-			alert(111);
-			//alert(t.val(parseInt(t.val())+1));
+			//alert(111);
+			t.val(parseInt(t.val())+1);
 			if (parseInt(t.val()) != 1) {
 				$('#min').attr('disabled', false);
 			}

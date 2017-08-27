@@ -19,7 +19,7 @@ class User extends Model
 	{
 		 $uname = $data['uname'];
 		 $phone = $data['tel'];
-		 $pwd = $data['pwd'];
+		 $pwd = md5($data['pwd']);
 		 $repwd = $data['repwd'];
 		 $regip = $_SERVER['REMOTE_ADDR'];
 		 if($regip == '::1'){

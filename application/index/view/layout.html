@@ -15,7 +15,6 @@
 		<link href="__HCSS_PATH__optstyle.css" rel="stylesheet" type="text/css" />
 		<script src="__HJS_PATH__jQuery-1.11.3.js"></script>
 		<script src="__HJS_PATH__amazeui.min.js"></script>
-		
 		<script src="__HJS_PATH__bootstrap.min.js"></script>
 		<script type="text/javascript" src="__HJS_PATH__list.js"></script>
 		<link href="__HCSS_PATH__orstyle.css" rel="stylesheet" type="text/css">
@@ -51,7 +50,7 @@
 								<div class="menu-hd MyShangcheng"><a href="/index/user/login/" target="_top"><i class="am-icon-user am-icon-fw"></i>未登录</a></div>
 							</div>
 							{/if}
-							{if !empty(session('username'))}
+							{if empty(session('username'))}
 							<div class="topMessage mini-cart">
 								<div class="menu-hd"><a id="mc-menu-hd" href="{:url('index/user/login')}" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
 							</div>
@@ -125,7 +124,7 @@
 						<p>
 							购物车
 						</p>
-						<p class="cart_num " id="shopcartnum">0</p>
+						<p class="cart_num " id="shopcartnum"><?php  echo session('cartsum')?></p>
 					</div>
 					
 					<div id="foot " class="item ">

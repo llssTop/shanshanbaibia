@@ -34,7 +34,11 @@
 						<div class="user-infoPic">
 
 							<div class="filePic">
-								<img class="am-circle am-img-thumbnail" src="__APIC_PATH__{$avatar}" alt="" />
+								{if !empty(session('avatar'))}
+									<img class="am-circle am-img-thumbnail" src="__APIC_PATH__<?php  echo session('avatar')?>" alt="" />
+									{else}
+									<img class="am-circle am-img-thumbnail" src="__HIMG_PATH__getAvatar.do.jpg" alt="" />
+									{/if}
 							</div>
 
 							<p class="am-form-help">头像</p>
@@ -110,15 +114,6 @@
 							<li> <a href="{:url('index/order/change')}">退款售后</a></li>
 						</ul>
 					</li>
-					<li class="person">
-						<a href="#">我的资产</a>
-						<ul>
-							<li> <a href="{:url('index/bonus/coupon')}">优惠券 </a></li>
-							<li> <a href="{:url('index/bonus/bonus')}">红包</a></li>
-							<li> <a href="{:url('index/bonus/bill')}">账单明细</a></li>
-						</ul>
-					</li>
-
 					<li class="person">
 						<a href="#">我的小窝</a>
 						<ul>

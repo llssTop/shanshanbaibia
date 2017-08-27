@@ -32,7 +32,7 @@
 						</ul>
 						<div class="am-tabs-bd">
 							<div class="am-tab-panel am-active">
-							<form method="post" action= "{:url('/index/user/doregister')}" onsubmit = "return checkregister()">
+							<form method="post" action= "{:url('/index/user/doregister')}" onsubmit ="return checkregister()">
 								<div class="user-name">
 									<label for="user"><i class="glyphicon glyphicon-user"></i></label>
 									<input type="text" name="uname" id="username" placeholder="用户名" onblur="checkUser()">
@@ -102,14 +102,17 @@
 	var checkVer = 'false';
 	function checkUser()
 	{
-		$("#username").css('border','1px solid red');
+		
 		var uname = $('#username').val();
 		$.post("{:url('index/user/check')}",{uname:uname},function(data){
 			if(data['errcode']==0){
 				checkname = 'true';
+				
+				$("#username").css('border','1px solid pink');
 				return true;
 			}
 			checkname = 'false';
+			$("#username").css('border','1px solid red');
 			return false;
 		},'json');
 	}
@@ -119,20 +122,22 @@
 		if(!(/^1[3|4|5|7|8][0-9]{9}$/.test(Phone)))
         {
         	$("#phone").css('border','1px solid red');
-           	$("#phone").val('手机号格式错误');
             return false;
         }
+        $("#phone").css('border','1px solid green');
         return true;
 	}
 	function checkCode()
 	{
 		var code = $("#code").val();
 		$.post("{:url('index/user/checkVert')}",{code:code},function(data){
-			//console.log(data);
+			console.log(data);
 			if(data['errcode'] == '1'){
 				checkVer = 'true';
+				$("#code").css('border','1px solid green');
 				return true;
 			}
+			$("#code").css('border','1px solid red');
 			checkVer = 'false';
 			return false;
 		},'json');
@@ -140,10 +145,12 @@
 	}
 	function checkpwd()
 	{
-		pwd = $("#password").val();
+		var pwd = $("#password").val();
 		if(pwd == ''){
+			$("#password").css('border','1px solid red');
 			return false;
 		}else{
+			$("#password").css('border','1px solid green');
 			return true;
 		}
 	}
@@ -152,9 +159,10 @@
 		repwd = $("#passwordRepeat").val();
 		pwd = $("#password").val();
 		if(repwd !== pwd){
-			$("#passwordRepeat").val('两次密码输入不一致');
+			$("#password").css('border','1px solid red'); $("#password").val('两次密码不一致');
 			return false;
 		}
+		$("#password").css('border','1px solid green');
 		return true;
 	}
     function checkregister()   
@@ -166,5 +174,5 @@
 		console.log(23233232);
 		return false;
 	}
-	checkregister();
+
 </script>

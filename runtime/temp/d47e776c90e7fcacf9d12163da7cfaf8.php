@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1503555864;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1503736421;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1503801282;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1503836652;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,7 +16,6 @@
 		<link href="__HCSS_PATH__optstyle.css" rel="stylesheet" type="text/css" />
 		<script src="__HJS_PATH__jQuery-1.11.3.js"></script>
 		<script src="__HJS_PATH__amazeui.min.js"></script>
-		
 		<script src="__HJS_PATH__bootstrap.min.js"></script>
 		<script type="text/javascript" src="__HJS_PATH__list.js"></script>
 		<link href="__HCSS_PATH__orstyle.css" rel="stylesheet" type="text/css">
@@ -51,11 +50,15 @@
 							 <div class="topMessage my-shangcheng">
 								<div class="menu-hd MyShangcheng"><a href="/index/user/login/" target="_top"><i class="am-icon-user am-icon-fw"></i>未登录</a></div>
 							</div>
-							<?php endif; ?>
-
+							<?php endif; if(empty(session('username'))): ?>
 							<div class="topMessage mini-cart">
-								<div class="menu-hd"><a id="mc-menu-hd" href="/index/order/shopcart/" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+								<div class="menu-hd"><a id="mc-menu-hd" href="<?php echo url('index/user/login'); ?>" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
 							</div>
+							<?php else: ?>
+							<div class="topMessage mini-cart">
+								<div class="menu-hd"><a id="mc-menu-hd" href="<?php echo url('index/order/shopcart'); ?>" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+							</div>
+							<?php endif; ?>
 							<div class="topMessage favorite">
 								<div class="menu-hd"><a href="/index/collection/collection/" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
 							<?php if(!empty(session('username'))): ?>
@@ -65,9 +68,7 @@
 							<?php endif; ?>
 						</ul>
 						</div>
-
 						<!--悬浮搜索框-->
-
 						<div class="nav white">
 							<div class="logoBig">
 								<li><img src="__HIMG_PATH__logobig.png" /></li>
@@ -81,7 +82,6 @@
 								</form>
 							</div>
 						</div>
-
 						<div class="clear"></div>
 					</div>
 					<div class=tip>
@@ -93,41 +93,42 @@
 						</a>
 						<div class="ibar_login_box status_login ">
 							<div class="avatar_box ">
-								<p class="avatar_imgbox "><img src="__HIMG_PATH__no-img_mid_.jpg " /></p>
+								<?php if(!empty(session('username'))): ?>
+								<p class="avatar_imgbox "><img src="__APIC_PATH__<?php echo session('avatar');?>" /></p>
 								<ul class="user_info ">
-									<li>用户名sl1903</li>
+									<li>用户名<?php echo session('username')?></li> 
+									 <li>级&nbsp;别&nbsp;&nbsp;<?php if(session('vip')==0): ?>铜牌会员 <?php elseif(session('vip')==1): ?>
+											银牌会员金牌会员<?php else: ?>铜牌会员
+											<?php endif; ?></li> 
+								</ul>
+								<?php else: ?>
+								<p class="avatar_imgbox "><img src="__HIMG_PATH__no-img_mid_.jpg" /></p>
+								<ul class="user_info ">
+									<li>用户名</li>
 									<li>级&nbsp;别普通会员</li>
 								</ul>
+								<?php endif; ?>
 							</div>
 							<div class="login_btnbox ">
-								<a href="# " class="login_order ">我的订单</a>
-								<a href="# " class="login_favorite ">我的收藏</a>
+								<a href="<?php echo url('index/order/shopcart'); ?> " class="login_order ">我的订单</a>
+								<a href="<?php echo url('index/collection/collection'); ?> " class="login_favorite ">我的收藏</a>
 							</div>
 							<i class="icon_arrow_white "></i>
 						</div>
 
 					</div>
 					<div id="shopCart " class="item ">
-						<a href="# ">
+						<a href="<?php echo url('index/order/shopcart'); ?>">
 							<span class="message "></span>
 						</a>
 						<p>
 							购物车
 						</p>
-						<p class="cart_num ">0</p>
+						<p class="cart_num " id="shopcartnum"><?php  echo session('cartsum')?></p>
 					</div>
-					<div id="asset " class="item ">
-						<a href="# ">
-							<span class="view "></span>
-						</a>
-						<div class="mp_tooltip ">
-							我的资产
-							<i class="icon_arrow_right_black "></i>
-						</div>
-					</div>
-
+					
 					<div id="foot " class="item ">
-						<a href="# ">
+						<a href="<?php echo url('index/collection/foot'); ?>">
 							<span class="zuji "></span>
 						</a>
 						<div class="mp_tooltip ">
@@ -137,7 +138,7 @@
 					</div>
 
 					<div id="brand " class="item ">
-						<a href="#">
+						<a href="<?php echo url('index/collection/collection'); ?>">
 							<span class="wdsc "><img src="__HIMG_PATH__wdsc.png " /></span>
 						</a>
 						<div class="mp_tooltip ">
@@ -145,17 +146,6 @@
 							<i class="icon_arrow_right_black "></i>
 						</div>
 					</div>
-
-					<div id="broadcast " class="item ">
-						<a href="# ">
-							<span class="chongzhi "><img src="__HIMG_PATH__chongzhi.png " /></span>
-						</a>
-						<div class="mp_tooltip ">
-							我要充值
-							<i class="icon_arrow_right_black "></i>
-						</div>
-					</div>
-
 					<div class="quick_toggle ">
 						<li class="qtitem ">
 							<a href="# "><span class="kfzx "></span></a>
@@ -193,30 +183,6 @@
 					购物车
 				</div>
 			</div>
-			<div id="asset-content " class="nav-content ">
-				<div class="nav-con-close ">
-					<i class="am-icon-angle-right am-icon-fw "></i>
-				</div>
-				<div>
-					资产
-				</div>
-
-				<div class="ia-head-list ">
-					<a href="# " target="_blank " class="pl ">
-						<div class="num ">0</div>
-						<div class="text ">优惠券</div>
-					</a>
-					<a href="# " target="_blank " class="pl ">
-						<div class="num ">0</div>
-						<div class="text ">红包</div>
-					</a>
-					<a href="# " target="_blank " class="pl money ">
-						<div class="num ">￥0</div>
-						<div class="text ">余额</div>
-					</a>
-				</div>
-
-			</div>
 			<div id="foot-content " class="nav-content ">
 				<div class="nav-con-close ">
 					<i class="am-icon-angle-right am-icon-fw "></i>
@@ -231,14 +197,6 @@
 				</div>
 				<div>
 					收藏
-				</div>
-			</div>
-			<div id="broadcast-content " class="nav-content ">
-				<div class="nav-con-close ">
-					<i class="am-icon-angle-right am-icon-fw "></i>
-				</div>
-				<div>
-					充值
 				</div>
 			</div>
 		</div>
@@ -280,7 +238,11 @@
 						<div class="user-infoPic">
 							<div class="filePic">
 								<div>
-							<img class="am-circle am-img-thumbnail" src="__APIC_PATH__<?php  echo $data['avatar']?>" alt="" />
+									<?php if(!empty(session('avatar'))): ?>
+									<img class="am-circle am-img-thumbnail" src="__APIC_PATH__<?php  echo $data['avatar']?>" alt="" />
+									<?php else: ?>
+									<img class="am-circle am-img-thumbnail" src="__HIMG_PATH__getAvatar.do.jpg" alt="" />
+									<?php endif; ?>
 								</div>
 							</div>
 							<p class="am-form-help">头像</p>
@@ -431,14 +393,7 @@
 							<li> <a href="<?php echo url('index/order/change'); ?>">退款售后</a></li>
 						</ul>
 					</li>
-					<li class="person">
-						<a href="#">我的资产</a>
-						<ul>
-							<li> <a href="<?php echo url('index/bonus/coupon'); ?>">优惠券 </a></li>
-							<li> <a href="<?php echo url('index/bonus/bonus'); ?>">红包</a></li>
-							<li> <a href="<?php echo url('index/bonus/bill'); ?>">账单明细</a></li>
-						</ul>
-					</li>
+					
 
 					<li class="person">
 						<a href="#">我的小窝</a>
