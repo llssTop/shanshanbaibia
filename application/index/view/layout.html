@@ -121,10 +121,14 @@
 						<a href="{:url('index/order/shopcart')}">
 							<span class="message "></span>
 						</a>
-						<p>
+						<p >
 							购物车
 						</p>
+						{if empty(session('username'))}
+						<p class="cart_num " id="shopcartnum">0</p>
+						{else}
 						<p class="cart_num " id="shopcartnum"><?php  echo session('cartsum')?></p>
+						{/if}
 					</div>
 					
 					<div id="foot " class="item ">

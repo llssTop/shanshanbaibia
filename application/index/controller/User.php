@@ -94,6 +94,7 @@ class User extends Controller
 				session('grade',$userInfo['grade']);
 				session('uname',$userInfo['uname']);
 				session('uid',$userInfo['uid']);
+				$usid = session('uid');
 				session('phone',$userInfo['phone']);
 				Session::set('username',"$uname");
 				session('avatar',$userInfo['avatar']);
@@ -225,13 +226,10 @@ class User extends Controller
 		$smtpserverport =25;//SMTP服务器端口
 		$smtpusermail = "18317775325@163.com";//SMTP服务器的用户邮箱
 		$smtpemailto = $_POST['toemail'];//发送给谁
-		// $smtpemailto = '19409721881@qq.com';
 		$smtpuser = "18317775325";//SMTP服务器的用户帐号，注：部分邮箱只需@前面的用户名
 		$smtppass = "llssTop66";//SMTP服务器的用户密码
 		$mailtitle = $_POST['title'];//
-		// $mailtitle = 'asdfad';
 		$mailcontent = "{$_POST['content']}";
-	
 		$mailtype = "TXT";//邮件格式（HTML/TXT）,TXT为文本邮件
 		//************************ 配置信息 ****************************
 		$smtp = new Smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//这里面的一个true是表示使用身份验证,否则不使用身份验证.
