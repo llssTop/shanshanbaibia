@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1503801282;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1503904055;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1504008069;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1503976753;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -118,14 +118,20 @@
 
 					</div>
 					<div id="shopCart " class="item ">
+						<?php if(!empty(session('username'))): ?>
 						<a href="<?php echo url('index/order/shopcart'); ?>">
 							<span class="message "></span>
 						</a>
+						<?php else: ?>
+						<a href="<?php echo url('index/user/login'); ?>">
+							<span class="message "></span>
+						</a>
+						<?php endif; ?>
 						<p >
 							购物车
 						</p>
 						<?php if(empty(session('username'))): ?>
-						<p class="cart_num " id="shopcartnum">0</p>
+						<p class="cart_num " id="shopcartnum"><?php  echo session('cartsum')?></p>
 						<?php else: ?>
 						<p class="cart_num " id="shopcartnum"><?php  echo session('cartsum')?></p>
 						<?php endif; ?>
@@ -394,7 +400,7 @@
 						<a href="#">我的交易</a>
 						<ul>
 							<li><a href="<?php echo url('index/order/order'); ?>">订单管理</a></li>
-							<li> <a href="<?php echo url('index/order/change'); ?>">退款售后</a></li>
+						
 						</ul>
 					</li>
 					

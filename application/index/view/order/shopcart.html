@@ -1,9 +1,9 @@
 			<script type="text/javascript" src="__HJS_PATH__jquery.js"></script>
 						<script type="text/javascript">
 		        function add(sid){
-			        var t=$('#mon' + sid);
+			        var t = $('#mon' + sid);
+			        console.log(t);
 			        t.val(parseInt(t.val())+1);
-
 			        //price
 			        var price = parseFloat($('#price' + sid).text());
 			        //ccount
@@ -27,6 +27,25 @@
 
 			        $('#count'+sid).text(sum.toFixed(2));
 		        }
+
+			</script>
+			<script type="text/javascript">
+				//var ccount = document.getElementById("J_Total"); //显示商品总钱的标签节点对象
+				//var money = document.getElementsByName('totle');
+
+					var oId = document.getElementsByName('items[]');
+					
+					var length = oId.length;
+					//console.log(length);
+					//var ok = money.innerText;
+					for (var i=0;i<length ;i++){
+						if(oId[i].checked == true){
+							totlecount = money.innerText + totlecount;
+						}
+					}
+					 ccount.innerHTML = totlecount;
+
+				
 			</script>
 			<div class="clear"></div>
 			<div class="concent">
@@ -60,79 +79,12 @@
 						<div class="bundle  bundle-last ">
 							<div class="clear"></div>
 							<div class="bundle-main">
-								{if empty(session('username'))}
-								<ul class="item-content clearfix">
-									<li class="td td-chk">
-										<div class="cart-checkbox ">
-											<input class="check" id="J_CheckBox_170037950254" name="items[]" value="170037950254" type="checkbox">
-											<label for="J_CheckBox_170037950254"></label>
-										</div>
-									</li>
-									<li class="td td-item">
-										<div class="item-pic">
-											
-											<a href="#" target="_blank" data-title="这是商品的描述" class="J_MakePoint" data-point="tbcart.8.12">
-												<img src="__HIMG_PATH__kouhong.jpg_80x80.jpg" class="itempic J_ItemImg"></a>
-										</div>
-										<div class="item-info">
-											<div class="item-basic-info">
-												<a href="#" target="_blank" title="美康粉黛醉美唇膏 持久保湿滋润防水不掉色" class="item-title J_MakePoint" data-point="tbcart.8.11">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</a>
-											</div>
-										</div>
-									</li>
-									<li class="td td-info">
-										<div class="item-props item-props-can">
-											<span class="sku-line">颜色：12#川南玛瑙</span>
-											<span class="sku-line">包装：裸装</span>
-											<span tabindex="0" class="btn-edit-sku theme-login">修改</span>
-											<i class="theme-login am-icon-sort-desc"></i>
-										</div>
-									</li>
-									<li class="td td-price">
-										<div class="item-price price-promo-promo">
-											<div class="price-content">
-												<div class="price-line">
-													<em class="price-original">78.00</em>
-												</div>
-												<div class="price-line">
-													<em class="J_Price price-now" tabindex="0">39.00</em>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="td td-amount">
-										<div class="amount-wrapper ">
-											<div class="item-amount ">
-												<div class="sl">
-													<input class="min am-btn am-btn-default" name="" type="button" value="-" onclick=""/>
-													<input class="text_box" name="" type="text" value="1" style="width:30px;" />
-													<input class="add am-btn am-btn-default" name="" type="button" value="+" onclick=""/>
-												</div>
-												
-											</div>
-										</div>
-									</li>
-									<li class="td td-sum">
-										<div class="td-inner">
-											<em tabindex="0" class="J_ItemSum number">117.00</em>
-										</div>
-									</li>
-									<li class="td td-op">
-										<div class="td-inner">
-											<a title="移入收藏夹" class="btn-fav" href="#">
-                  移入收藏夹</a>
-											<a href="javascript:;" data-point-url="#" class="delete">
-                  删除</a>
-										</div>
-									</li>
-								</ul>
-								
-								{else}
+								{if !empty(session('username'))}
 								{volist name="shopsum" id="gwc"}
 								<ul class="item-content clearfix">
 									<li class="td td-chk">
 										<div class="cart-checkbox ">
-											<input class="check" id="J_CheckBox_170037950254" name="items[]" value="170037950254" type="checkbox">
+											<input class="check" id="J_CheckBox_170037950254" name="items[{$gwc.sid}]" value="170037950254" type="checkbox">
 											<label for="J_CheckBox_170037950254"></label>
 										</div>
 									</li>
@@ -282,20 +234,7 @@
 				}
 				
 			</script>
-			<!--<script type="text/javascript">
-				//var ccount = document.getElementById("J_Total"); //显示商品总钱的标签节点对象
-				//var money = document.getElementsByName('totle');
-				var oId = document.getElementsByName('items[]');
-				var length = oId.length;
-				//var ok = money.innerText;
-				for (var i=0;i<length ;i++){
-					if(oId[i].checked == true){
-						totlecount = money.innerText + totlecount;
-					}
-				}
-				 ccount.innerHTML = totlecount;
-			}	
-			</script>-->
+			
 
 			<!--操作页面-->
 			<div class="theme-popover-mask"></div>

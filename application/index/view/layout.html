@@ -118,14 +118,20 @@
 
 					</div>
 					<div id="shopCart " class="item ">
+						{if !empty(session('username'))}
 						<a href="{:url('index/order/shopcart')}">
 							<span class="message "></span>
 						</a>
+						{else}
+						<a href="{:url('index/user/login')}">
+							<span class="message "></span>
+						</a>
+						{/if}
 						<p >
 							购物车
 						</p>
 						{if empty(session('username'))}
-						<p class="cart_num " id="shopcartnum">0</p>
+						<p class="cart_num " id="shopcartnum"><?php  echo session('cartsum')?></p>
 						{else}
 						<p class="cart_num " id="shopcartnum"><?php  echo session('cartsum')?></p>
 						{/if}
