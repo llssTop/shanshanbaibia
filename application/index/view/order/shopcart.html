@@ -2,16 +2,16 @@
 						<script type="text/javascript">
 					        function add(sid){
 						        var t = $('#mon' + sid);
-						        console.log(t);
+						        //console.log(t);
 						        t.val(parseInt(t.val())+1);
 						        //price
-						        var price = parseFloat($('#price' + sid).text());
+						        var price = parseInt($('#price' + sid).text());
 						        //ccount
 						        var count = parseInt(t.val());
 
-						        var sum = price * count;
+						        var sum = parseInt(price * count);
 
-						        $('#count'+sid).text(sum.toFixed(2));
+						        $('#count'+sid).text(sum);
 					        }
 
 					        function del(sid){
@@ -21,10 +21,10 @@
 						        if(parseInt(t.val())<0) {
 							        t.val(0);
 						         }
-						        var price = parseFloat($('#price' + sid).text());
+						        var price = parseInt($('#price' + sid).text());
 						        var count = parseInt(t.val());
-						        var sum = price * count;
-						        $('#count'+sid).text(sum.toFixed(2));
+						        var sum = parseInt(price * count);
+						        $('#count'+sid).text(sum);
 					        }
 			</script>
 			<script type="text/javascript">
@@ -80,7 +80,7 @@
 									<li class="td td-chk">
 										
 										<div class="cart-checkbox ">
-											<input class="check checkinfo" sid="{$gwc.sid}" type="checkbox">
+											<input class="check checkinfo" sid="{$gwc.sid}" type="checkbox" value="{$gwc.sid}">
 											<label for="{$gwc.sid}"></label>
 										</div>
 									</li>
@@ -109,7 +109,7 @@
 															{elseif $gwc['taste'] == '4'}
 															咸香
 															{/if}
-														</span>
+											</span>
 											
 											<i class="theme-login am-icon-sort-desc"></i>
 										</div>
@@ -265,7 +265,7 @@
 											$('.checkinfo').change(function(){
 												var checkbox = $(this);
 												var sid = parseInt(checkbox.attr('sid'));
-												count = parseFloat($('#count' + sid).text());
+												count = parseInt($('#count' + sid).text());
 												var value = checkbox.attr('checked');
 												if (value) {
 													sidnum[sid] =parseInt(sid); 
@@ -273,14 +273,14 @@
 													//alert(num);
 													size[sid] =parseInt($("#mon" + sid).val());
 													//console.log(size);
-													f = parseFloat($('#c').text()) + count;
+													f = parseInt($('#c').text()) + count;
 													$('#J_SelectedItemsCount').text(num);
-													$('#c').text(f.toFixed(2));
+													$('#c').text(f);
 												} else {
 													parseInt(--num);
-													f = parseFloat($('#c').text()) - count;
+													f = parseInt($('#c').text()) - count;
 													$('#J_SelectedItemsCount').text(num);
-													$('#c').text(f.toFixed(2));
+													$('#c').text(f);
 												}
 												
 											})
@@ -291,8 +291,10 @@
 													$('.checkinfo').prop('checked',true).change();
 												} else {
 													$('.checkinfo').prop('checked',false).change();
-													num=0;
-													count=0;
+													num = 0;
+													count = 0;
+												
+													sidnum = [];
 													$('#J_SelectedItemsCount').text(num);
 													$('#c').text(count);
 												}
@@ -301,23 +303,43 @@
 				
 			</script>
 			<script type="text/javascript">
-			    var size = []; 
-			    var godnum = [];
-			    var ordersize = 0;
+			    
+			   
+			   
+			   
 				function jiesuan()
-				{
+				{   //商品对应的数量
+					var ordersize = 0;
+					var godnum = [];
+					// 商品的sid
+					var sid = [];
+					// 商品对应的钱数
+					var sizen = []; 
+					//alert(44);
 					var checkinfo = $('.check');
-					for(var i =0;i<checkinfo.length;i++){
+					for(var i =0 ; i < checkinfo.length; i++){
 						if($(checkinfo[i]).prop('checked')){
 							ordersize++;
-							size[i]=parseInt($(checkinfo[i]).parent().parent().next().next().next().next().next().find('.Money').text());
+							// 存储的商品的sid
+					        sid[i] = parseInt($(checkinfo[i]).val());
+					       
+							//qi 找钱数
+							sizen[i]=parseInt($(checkinfo[i]).parent().parent().next().next().next().next().next().find('.Money').text());
+							 //alert(sizen[i]);
+							 //console.log(sizen[i]);
+							 // 存储的数量
 							godnum[i]=parseInt($(checkinfo[i]).parent().parent().next().next().next().next().find('.text_box').val());
 						}
 					}
+					//console.log(sizen);
 					var zongmoney = parseInt($("#c").text());
-					var zongnum = parseInt($("#J_SelectedItemsCount").text());
-					$.post("{:url('index/order/orderdetial')}",{size:size,godnum:godnum,zongnum:zongnum,zongmoney:zongmoney,ordersize:o},function(data){
-
+					//var zongnum = parseInt($("#J_SelectedItemsCount").text());
+					$.post("{:url('index/order/orderdetial')}",{sizen:sizen,godnum:godnum,zongmoney:zongmoney,ordersize:ordersize,sid:sid},function(data){
+							if(data.errcode){
+								window.location.href="pay"; 
+							}else{
+                                window.location.href="shopcart";  
+							}
 					},'json');
 				}
 			</script>

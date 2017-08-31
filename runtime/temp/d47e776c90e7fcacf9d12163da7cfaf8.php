@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1504071618;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1504065665;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1504071618;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1504114788;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -131,7 +131,7 @@
 							购物车
 						</p>
 						<?php if(empty(session('username'))): ?>
-						<p class="cart_num " id="shopcartnum"><?php  echo session('cartsum')?></p>
+						<p class="cart_num " id="shopcartnum">0</p>
 						<?php else: ?>
 						<p class="cart_num " id="shopcartnum"><?php  echo session('cartsum')?></p>
 						<?php endif; ?>

@@ -141,19 +141,29 @@ class Order extends Controller
 		$oid = $_POST['oid'];
 		$updatestatus = $this->order->upstatus($oid);
 	}
-	public function orderdetial()
+	public function orderdetial(Request $request)
 	{
-		//dump($_POST);
+	
+		$data = $_POST;
 		$ordercode = $_SERVER['REMOTE_ADDR'];
 		if($ordercode=='::1'){
 			$ordercode = '127.0.0.1';
 		}
+		
 		$ordercode = ip2long($ordercode);
-		$ordercode =substr($ordercode,4);
+	
 		$time = time();
-		$ordercode . = $time;
-		$data = $_POST;
+		
+		$ordercode =substr($ordercode,0,4);
+		$ordercode .= $time;
+		
 		$result = $this->order->addorder($data,$ordercode);
+		if($result){
+			echo json_encode(['errcode'=>1 ,'info'=>'订单成功']);
+				
+			} else {
+			 echo json_encode(['errcode'=>0 ,'info'=>'订单失败']);
+		}
 		
 	}
 }
