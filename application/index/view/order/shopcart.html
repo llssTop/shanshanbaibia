@@ -75,6 +75,7 @@
 							<div class="bundle-main">
 
 								{if !empty(session('username'))}
+								{if !empty($shopnum)}
 								{volist name="shopsum" id="gwc"}
 								<ul class="item-content clearfix">
 									<li class="td td-chk">
@@ -170,6 +171,7 @@
 									</li>
 								</ul>
 								{/volist}
+								{/if}
 								{/if}
 							</div>
 						</div>

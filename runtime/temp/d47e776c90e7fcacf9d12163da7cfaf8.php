@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1504071618;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1504114788;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1504071618;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1504148332;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
