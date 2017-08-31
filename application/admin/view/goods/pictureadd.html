@@ -43,42 +43,74 @@
   </div>
    <div class="page_right_style">
    <div class="type_title">添加商品</div>
-	<form action="{:url('admin/goods/upload')}" method="post" class="form form-horizontal" id="form-article-add" enctype="multipart/form-data">
+	<form action="{:url('admin/goods/upload')}" method="post" class="form form-horizontal" id="form-article-add" enctype="multipart/form-data" onsubmit=" return checksubmit()">
 		<div class="clearfix cl">
          <label class="form-label col-2"><span class="c-red">*</span>商品名称：</label>
-		 <div class="formControls col-10"><input type="text" class="input-text" value="" placeholder="" id="" name="name"></div>
+		 <div class="formControls col-10"><input type="text" class="input-text" value="" placeholder="" id="name"  name="name" onblur="checkname()"></div>
 		</div>
 		<div class=" clearfix cl">
-         <label class="form-label col-2">所属类别：</label>
-	     <div class="formControls col-10"><input type="text" class="input-text" value="" placeholder="" id="" name="cate"></div>
+			<div class="Add_p_s">
+	         <label class="form-label col-2">所属类别：</label>
+		      <div class="formControls col-2">
+		      	<select name="big" id="bigse" class="bigse">
+		      	<!--  onchange="selectOnchange(this)" -->
+		      	{if !empty($re)}
+		      	{foreach $re as $val}
+		      			<option value="{$val.cid}">{$val.cname}</option>
+		      	{/foreach}
+		      	{/if}
+		      	</select>
+		      </div>
+			</div>
+		<!-- 	<div class="Add_p_s">
+	         <label class="form-label col-2">所属二级类别：</label>
+		     <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="cate"></div>
+		      <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="brand">
+		      	<select name="mid" id="midse" class="midse">
+		      	{if !empty($re1)}
+		      	{foreach $re1 as $val1}
+		      			<option value="{$val1.cid}">{$val1.cname}</option>
+		      	{/foreach}
+		      	{/if}
+		      	</select>
+		      </div>
+			</div>
+			<div class="Add_p_s">
+	         <label class="form-label col-2">所属三层类别：</label>
+		     <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="cate"></div>
+		     <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="brand">
+		      	<select name="small" id="smallse">
+		      			<option></option>
+		      			<option></option>
+		      	</select>
+		      </div>
+			</div> -->
 		</div>
 		<div class=" clearfix cl">
-			
 			<div class="Add_p_s">
             <label class="form-label col-2">产品编号：</label>
-			<div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="code"></div>
+			<div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="code" name="code" onblur="checkcode()"></div>
             </div>
 			<div class="Add_p_s">
              <label class="form-label col-2">产&nbsp;&nbsp;&nbsp;&nbsp;地：</label>	
-			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="address"></div>
+			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="address" name="address" onblur="checkaddress()"></div>
 			</div>
             <div class="Add_p_s">
-             <label class="form-label col-2">库&nbsp;&nbsp;&nbsp;&nbsp;存：</label>	
-			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="stock"></div>
+             <label class="form-label col-2">库&nbsp;&nbsp;&nbsp;&nbsp;存：</label>
+			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="stock" name="stock" onblur="checkstock()">件</div>
 			</div>
             <div class="Add_p_s">
              <label class="form-label col-2">品&nbsp;&nbsp;&nbsp;&nbsp;牌：</label>	
-			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="brand"></div>
+			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="brand" name="brand" onblur="checkbrand()"></div>
 			</div>
              <div class="Add_p_s">
              <label class="form-label col-2">产品重量：</label>	
-			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="weight" >kg</div>
+			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="weight" name="weight" onblur="checkweight()">kg</div>
 			</div>
              <div class="Add_p_s">
              <label class="form-label col-2">口味：</label>	
 			 <div class="formControls col-2"><span class="select-box">
-				<select class="select" multiple name="taste">
-					<!-- <option>请选择</option> -->
+				<select class="select" multiple name="taste[]">
 					<option value="1">原味</option>
 					<option value="2">酸辣</option>
 					<option value="3">甜味</option>
@@ -89,13 +121,13 @@
 			</div>
             <div class="Add_p_s">
              <label class="form-label col-2">展示价格：</label>	
-			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="price" >元</div>
+			 <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="price" name="price" onblur="checkprice()">元</div>
 			</div>
 		</div>
 		<div class="clearfix cl">
 			<label class="form-label col-2">关键词：</label>
 			<div class="formControls col-10">
-				<input type="text" class="input-text" value="" placeholder="" id="" name="keywords">
+				<input type="text" class="input-text" value="" placeholder="" id="keywords" name="keywords" onblur="checkkeywords()">
 			</div>
 		</div>
 		<div class="clearfix cl">
@@ -127,12 +159,13 @@
 			<div id="up_btn" class="btn">
 			<span>添加商品展示图</span>
 			<!-- <input type="file" name="image" id="photoimg" multiple> -->
-			<input type="file" name="image1">
+			<input type="file" name="image1" id="image1" onblur="checkimage1()">
 			</div>
+			<br />
 			<div id="up_btn" class="btn">
 			<span>添加图片</span>
-			<!-- <input type="file" name="image" id="photoimg" multiple> -->
-			<input type="file" name="image[]" multiple="multiple">
+		
+			<input type="file" name="image[]" multiple="multiple" id="image" onblur="checkimage()">
 			</div>
 			<p>支持jpg，gif，png格式</p>
 			<div id="preview"></div>
@@ -140,15 +173,10 @@
          <div class="clearfix cl">
          <label class="form-label col-2">详细内容：</label>
 			<div class="formControls col-10">
-				<script id="editor" type="text/plain" style="width:100%;height:400px;"></script> 
+				<script id="editor" type="text/plain" style="width:100%;height:400px;" onblur="checkeditor()"></script> 
              </div>
         </div>
-        <div class="clearfix cl">
-         <label class="form-label col-2">允许评论：</label>
-			<div class="formControls col-2 skin-minimal">
-			 <div class="check-box" style=" margin-top:9px"><input type="checkbox" id="checkbox-1"><label for="checkbox-1">&nbsp;</label></div>
-             </div>
-        </div>
+  
 		<div class="clearfix cl">
 			<div class="Button_operation">
 				<input  onClick="article_save_submit();" class="btn btn-primary radius" type="submit" value="保存并提交审核"><i class="icon-save "></i>
@@ -158,12 +186,13 @@
     </div>
 </div>
 </div>
+<script src="__AJS_PATH__jQuery-1.11.3.min.js"></script>
 <script src="__AJS_PATH__jquery-1.9.1.min.js"></script>  
 <script src="__ADMIN_PATH__assets/js/bootstrap.min.js"></script>
 <script src="__ADMIN_PATH__assets/js/typeahead-bs2.min.js"></script>
 <script src="__ADMIN_PATH__assets/layer/layer.js" type="text/javascript" ></script>
 <script src="__ADMIN_PATH__assets/laydate/laydate.js" type="text/javascript"></script>
-<script type="text/javascript" src="__ADMI_PATH__Widget/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="__ADMIN_PATH__Widget/My97DatePicker/WdatePicker.js"></script> 
 <script type="text/javascript" src="__ADMIN_PATH__Widget/icheck/jquery.icheck.min.js"></script> 
 <script type="text/javascript" src="__ADMIN_PATH__Widget/zTree/js/jquery.ztree.all-3.5.min.js"></script> 
 <script type="text/javascript" src="__ADMIN_PATH__Widget/Validform/5.3.2/Validform.min.js"></script> 
@@ -176,6 +205,140 @@
 <script type="text/javascript" src="__AJS_PATH__H-ui.admin.js"></script> 
 <script src="__AJS_PATH__jquery.wallform.js"></script>
 </script>
+<!-- <script>
+	function selectOnchange(obj)
+	{
+		var big = obj.options[obj.selectedIndex].value;
+		$.get("{:url('admin/goods/pictureadd')}",{big:big},function(data){
+			foreach(var i in data)
+			{
+				var datas = data[i];
+				$('.midse').appendChild.innerHTML("<option value=" + datas.cid + ">" + datas.cname + "</option>")
+			}
+		},'json')
+	}
+</script> -->
+<script>
+function checkname()
+{
+	if($("#name").val() == '')
+	{
+		$("#name").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checkcode()
+{
+	if($("#code").val() == '')
+	{
+		$("#code").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checkaddress()
+{
+	if($("#address").val() == '')
+	{
+		$("#address").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checkstock()
+{
+	if($("#stock").val() == '')
+	{
+		$("#stock").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checkbrand()
+{
+	if($("#brand").val() == '')
+	{
+		$("#brand").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checkweight()
+{
+	if($("#weight").val() == '')
+	{
+		$("#weight").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checkprice()
+{
+	if($("#price").val() == '')
+	{
+		$("#price").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checkkeywords()
+{
+	if($("#keywords").val() == '')
+	{
+		$("#keywords").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checkimage1()
+{
+	if($("#image1").val() == '')
+	{
+		$("#image1").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checkimage()
+{
+	if($("#image").val() == '')
+	{
+		$("#image").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checkeditor()
+{
+	if($("#editor").editorVal() == '')
+	{
+		$("#editor").css('border','1px solid red');
+		return false;
+	}else{
+		return true;
+	}
+}
+function checksubmit()
+{
+	if(checkname() && checkcode() && checkaddress() && checkaddress() && checkbrand() && checkstock() && checkweight() &&  checkprice() && checkkeywords() && checkeditor())
+	{
+		return true;
+	}else{
+		return false;
+	}
+}
+</script>
 <script>
 $(function(){
 	$('#photoimg').die('click').live('change', function(){
@@ -185,7 +348,7 @@ $(function(){
 			target:'#preview',
 			beforeSubmit:function(){
 				status.show();
-				btn.hide();a
+				btn.hide();
 			}
 			success:function(){
 				status.hide();
@@ -198,7 +361,6 @@ $(function(){
 		}).submit();
 	})
 })
-
 </script>
 <script>
 $(function() { 

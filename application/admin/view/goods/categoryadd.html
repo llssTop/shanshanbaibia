@@ -20,36 +20,26 @@
 <div class="type_style">
  <div class="type_title">产品类型信息</div>
   <div class="type_content">
-  <div class="Operate_btn">
-  <a href="javascript:ovid()" class="btn  btn-warning"><i class="icon-edit align-top bigger-125"></i>新增子类型</a>
-  <a href="javascript:ovid()" class="btn  btn-success"><i class="icon-ok align-top bigger-125"></i>禁用该类型</a>
-  <a href="javascript:ovid()" class="btn  btn-danger"><i class="icon-trash   align-top bigger-125"></i>删除该类型</a>
-  </div>
-  <form action="" method="post" class="form form-horizontal" id="form-user-add">
+  <form  class="form form-horizontal" id="form-user-add">
     <div class="Operate_cont clearfix">
-      <label class="form-label"><span class="c-red">*</span>分类名称：</label>
+      <label class="form-label"><span class="c-red">*</span>选中的类名称：</label>
       <div class="formControls ">
-        <input type="text" class="input-text" value="" placeholder="" id="user-name" name="product-category-name">
+      <input type="hidden" value="{$Request.get.cid}" id="hid">
+        <input type="text" class="input-text" value="{$cname}" placeholder="" id="father-name" name="product-category-name">
       </div>
     </div>
         <div class="Operate_cont clearfix">
-      <label class="form-label"><span class="c-red">*</span>排序：</label>
+      <label class="form-label"><span class="c-red">*</span>子类/新名字：</label>
       <div class="formControls ">
-        <input type="text" class="input-text" value="" placeholder="" id="user-name" name="product-category-name">
+        <input type="text" class="input-text" placeholder="" id="son-name" name="product-category-name">
       </div>
     </div>
-    <div class="Operate_cont clearfix">
-    <label class="form-label">备注：</label>
-    <div class="formControls">
-    <textarea name="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="textarealength(this,100)"></textarea>
-     <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
-    </div>
-    </div>
-    <div class="">
-     <div class="" style=" text-align:center">
-      <input class="btn btn-primary radius" type="submit" value="提交">
-      </div>
-    </div>
+    <div class="Operate_btn">
+     <a href="##" class="btn  btn-warning" id="tong"><i class="icon-edit align-top bigger-125"></i>新增同级</a>
+      <a href="##" class="btn  btn-warning" id="zeng"><i class="icon-edit align-top bigger-125"></i>新增子类型</a>
+      <a href="##" class="btn btn-primary" id="change"><i class="icon-edit  align-top bigger-125"></i>修改该类型</a>
+      <a href="##" class="btn  btn-danger" id="forbit"><i class="icon-trash align-top bigger-125"></i>删除该类型</a>
+  </div>
   </form>
   </div>
 </div> 
@@ -59,24 +49,71 @@
 <script type="text/javascript" src="__ADMIN_PATH__assets/layer/layer.js"></script>
 <script type="text/javascript" src="__AJS_PATH__H-ui.js"></script> 
 <script type="text/javascript" src="__AJS_PATH__H-ui.admin.js"></script>
-<script type="text/javascript">
-$(function(){
-	$('.skin-minimal input').iCheck({
-		checkboxClass: 'icheckbox-blue',
-		radioClass: 'iradio-blue',
-		increaseArea: '20%'
-	});
-	
-	$("#form-user-add").Validform({
-		tiptype:2,
-		callback:function(form){
-			form[0].submit();
-			var index = parent.layer.getFrameIndex(window.name);
-			parent.$('.btn-refresh').click();
-			parent.layer.close(index);
-		}
-	});
-});
+<script src="__AJS_PATH__jQuery-1.11.3.min.js"></script>
+<script>
+$('#zeng').click(function(){
+  if($('#son-name').val() == '')
+  {
+    alert('请填入子类名称');
+  }else{
+    var id = $('#hid').val();
+    var name = $('#son-name').val();
+    $.post("{:url('admin/goods/addcate')}",{id:id,name:name},function(data){
+      if(data.errcode == 1)
+      {
+        alert('添加成功');
+      }else{
+        alert('添加失败');
+      }
+    },'json')
+  }
+})
+$('#change').click(function(){
+  if($('#son-name').val() == '')
+  {
+    alert('新名字不能为空');
+  }else{
+    var id = $('#hid').val();
+    var name = $('#son-name').val();
+    $.post("{:url('admin/goods/upcate')}",{id:id,name:name},function(data){
+        if(data.errcode == 1)
+        {
+          alert('修改成功');
+        }else{
+          alert('修改失败，再试试吧');
+        }
+    },'json');
+  }
+})
+$('#forbit').click(function(){
+  var id = $('#hid').val();
+  $.post("{:url('admin/goods/del')}",{id:id},function(data){
+    if(data.errcode == 1)
+    {
+      alert('禁止成功');
+    }else{
+      alert('删除失败');
+    }
+  },'json')
+})
+//添加与修改时只考虑所有不重名
+$('#tong').click(function(){
+  if($('#son-name').val() == '')
+  {
+    alert('请给同级加上名字');
+  }else{
+    var id = $('#hid').val();
+    var name = $('#son-name').val();
+    $.post("{:url('admin/goods/addtong')}",{id:id,name:name},function(data){
+      if(data.errcode == 1)
+      {
+        alert('添加成功');
+      }else{
+        alert('添加失败');
+      }
+    },'json')
+  }
+})
 </script>
 </body>
 </html>

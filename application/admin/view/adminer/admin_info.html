@@ -29,41 +29,43 @@
      <div class="type_title">管理员信息 </div>
       <div class="xinxi">
         <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">用户名： </label>
-          <div class="col-sm-9"><input type="text" name="用户名" id="website-title" value="张小泉" class="col-xs-7 text_info" disabled="disabled">
+          <div class="col-sm-9">
+              <input type="hidden" name="uid" value="{$re.id}" id="uid">
+          <input type="text" name="username" id="website-title" value="{$re.username}" class="col-xs-7 text_info" disabled="disabled">
           &nbsp;&nbsp;&nbsp;<a href="javascript:ovid()" onclick="change_Password()" class="btn btn-warning btn-xs">修改密码</a></div>
           
           </div>
           <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">性别： </label>
           <div class="col-sm-9">
-          <span class="sex">男</span>
+          <span class="sex">{switch name="$re.sex"}
+              {case value="1"}保密{/case}
+              {case value="2"}男{/case}
+              {case value="3"}女{/case}
+                {default /}
+                {/switch}
+          </span>
             <div class="add_sex">
-            <label><input name="form-field-radio" type="radio" class="ace" checked="checked"><span class="lbl">保密</span></label>&nbsp;&nbsp;
-            <label><input name="form-field-radio" type="radio" class="ace"><span class="lbl">男</span></label>&nbsp;&nbsp;
-            <label><input name="form-field-radio" type="radio" class="ace"><span class="lbl">女</span></label>
+            <label><input name="form-field-radio" type="radio" class="ace" checked="checked" value="1"><span class="lbl">保密</span></label>&nbsp;&nbsp;
+            <label><input name="form-field-radio" type="radio" class="ace" value="2"><span class="lbl">男</span></label>&nbsp;&nbsp;
+            <label><input name="form-field-radio" type="radio" class="ace" value="3"><span class="lbl">女</span></label>
             </div>
            </div>
           </div>
-          <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">年龄： </label>
-          <div class="col-sm-9"><input type="text" name="年龄" id="website-title" value="24" class="col-xs-7 text_info" disabled="disabled"></div>
-          </div>
-          <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">移动电话： </label>
-          <div class="col-sm-9"><input type="text" name="移动电话" id="website-title" value="13567878908" class="col-xs-7 text_info" disabled="disabled"></div>
-          </div>
+          
           <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">电子邮箱： </label>
-          <div class="col-sm-9"><input type="text" name="电子邮箱" id="website-title" value="567890@qq.com" class="col-xs-7 text_info" disabled="disabled"></div>
+          <div class="col-sm-9"><input type="text" name="email" id="website-title" value="{$re.email}" class="col-xs-7 text_info" disabled="disabled"></div>
           </div>
-          <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">QQ： </label>
-          <div class="col-sm-9"><input type="text" name="QQ" id="website-title" value="456789787" class="col-xs-7 text_info" disabled="disabled"> </div>
-          </div>
-           <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">权限： </label>
-          <div class="col-sm-9" > <span>普通管理员</span></div>
+        
+           <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">身份：</label>
+          <div class="col-sm-9" > <span>{if !empty($re1)}
+           {foreach $re1 as $v}{$v.rname}&&{/foreach} {/if}</span></div>
           </div>
            <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">注册时间： </label>
-          <div class="col-sm-9" > <span>2016-7-5</span></div>
+          <div class="col-sm-9" > <span>{$re.create_time|date='Y-m-d H:i:s',###}</span></div>
           </div>
            <div class="Button_operation clearfix"> 
-				<button onclick="modify();" class="btn btn-danger radius" type="submit">修改信息</button>				
-				<button onclick="save_info();" class="btn btn-success radius" type="button">保存修改</button>              
+				<button onclick="modify()" class="btn btn-danger radius" type="submit">修改信息</button>				
+				<button onclick="save_info()" class="btn btn-success radius" type="button">保存修改</button>              
 			</div>
             </div>
     </div>
@@ -84,36 +86,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-        <td>15686</td>
-        <td>1</td>
-        <td>登录成功!</td>
-        <td>江苏南京</td>
-        <td>admin</td>
-        <td>61.233.7.80</td>
-        <td>2014-6-11 11:11:42</td>      
-      </tr>
+    {if !empty($re2)}
+    {foreach $re2 as $val2}
          <tr>
         <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-        <td>15686</td>
+        <td>{$val2.id}</td>
         <td>1</td>
         <td>登录成功!</td>
         <td>江苏南京</td>
-        <td>admin</td>
-        <td>61.233.7.80</td>
-        <td>2014-6-11 11:11:42</td>      
+        <td>{$val2.username}</td>
+        <td>{$val2.loginip|long2ip}</td>
+        <td>{$val2.logintime|date='Y-m-d H:i:s',###}</td>      
       </tr>
-         <tr>
-        <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-        <td>15686</td>
-        <td>1</td>
-        <td>登录成功!</td>
-        <td>江苏南京</td>
-        <td>admin</td>
-        <td>61.233.7.80</td>
-        <td>2014-6-11 11:11:42</td>      
-      </tr>
+      {/foreach}
+      {/if}
     </tbody>
   </table>
     </div>
@@ -123,9 +109,9 @@
  <!--修改密码样式-->
          <div class="change_Pass_style" id="change_Pass">
             <ul class="xg_style">
-             <li><label class="label_name">原&nbsp;&nbsp;密&nbsp;码</label><input name="原密码" type="password" class="" id="password"></li>
-             <li><label class="label_name">新&nbsp;&nbsp;密&nbsp;码</label><input name="新密码" type="password" class="" id="Nes_pas"></li>
-             <li><label class="label_name">确认密码</label><input name="再次确认密码" type="password" class="" id="c_mew_pas"></li>
+             <li><label class="label_name">原&nbsp;&nbsp;密&nbsp;码</label><input name="old" type="password" class="" id="password"></li>
+             <li><label class="label_name">新&nbsp;&nbsp;密&nbsp;码</label><input name="new" type="password" class="" id="Nes_pas"></li>
+             <li><label class="label_name">确认密码</label><input name="rpass" type="password" class="" id="c_mew_pas"></li>
               
             </ul>
      <!--       <div class="center"> <button class="btn btn-primary" type="button" id="submit">确认修改</button></div>-->
@@ -150,15 +136,25 @@ function save_info(){
                
 			   layer.alert(str+=""+$(this).attr("name")+"不能为空！\r\n",{
                 title: '提示框',				
-				icon:0,								
-          }); 
-		    num++;
+				        icon:0,								
+              }); 
+		         num++;
             return false;            
           } 
 		 });
-		  if(num>0){  return false;}	 	
+		  if(num>0){return false;}	 	
           else{
-			  
+           /* var sex = $('#ace':checked).val();
+            var email = $('#website-title').val();
+            var uid = $("#uid").val();
+           $.post("{:url('admin/adminer/checkinfo')}",{sex:sex,email:email,uid:uid},function(data){
+                if(data.errcode == 1)
+                {
+                  return true;
+                }else{
+                  return false;
+                }
+           },'json');*/
 			   layer.alert('修改成功！',{
                title: '提示框',				
 			   icon:1,			   		
@@ -192,10 +188,10 @@ function save_info(){
 			  layer.alert('原密码不能为空!',{
               title: '提示框',				
 				icon:0,
-			    
+        
 			 });
 			return false;
-          } 
+          }
 		  if ($("#Nes_pas").val()==""){
 			  layer.alert('新密码不能为空!',{
               title: '提示框',				
@@ -222,10 +218,21 @@ function save_info(){
 			 });
 			 return false;
         }   
-		 else{			  
+		 else{	
+          var pass = $("#password").val();
+          var uid = $("#uid").val();
+          var newpass = $("#Nes_pas").val();
+          $.post("{:url('admin/adminer/checkpass')}",{pass:pass,uid:uid,newpass:newpass},function(data){
+              if(data.errcode == 1)
+              {
+                return true;
+              }else{
+                return false;
+              }
+            },'json')		  
 			  layer.alert('修改成功！',{
                title: '提示框',				
-			icon:1,		
+			 icon:1,		
 			  }); 
 			  layer.close(index);      
 		  }	 

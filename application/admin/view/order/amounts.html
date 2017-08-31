@@ -54,45 +54,18 @@
 			</tr>
 		</thead>
         <tbody> 
+       {if !empty($re)}
+       {foreach $re as $va}
         <tr>
-         <td>34</td>
-         <td>HD2016061200456787</td>
-         <td>2016-6-12</td>
-         <td>234</td>
-         <td>成功</td>         
-        </tr>
-        <tr>
-         <td>24</td>
-         <td>HD2016061200456787</td>
-         <td>2016-6-12</td>
-         <td>234</td>
+         <td>{$va.orderid}</td>
+         <td>{$va.ordercode}</td>
+         <td>{$va.create_time|date='Y-m-d H:i:s',###}</td>
+         <td>{$va.money}</td>
          <td>成功</td>
          
         </tr>
-        <tr>
-         <td>34</td>
-         <td>HD2016061200456787</td>
-         <td>2016-6-12</td>
-         <td>234</td>
-         <td>成功</td>
-         
-        </tr>
-        <tr>
-         <td>14</td>
-         <td>HD2016061200456787</td>
-         <td>2016-6-12</td>
-         <td>234</td>
-         <td>成功</td>
-         
-        </tr>
-        <tr>
-         <td>44</td>
-         <td>HD2016061200456787</td>
-         <td>2016-6-12</td>
-         <td>234</td>
-         <td>成功</td>
-         
-        </tr>
+        {/foreach}
+        {/if}
         </tbody>
         </table> 
     

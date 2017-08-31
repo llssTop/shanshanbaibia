@@ -1,8 +1,12 @@
 <?php
 namespace app\admin\Controller;
-use app\admin\model\Auth;
+use app\admin\model\Auser;
 use think\Controller;
 use think\Validate;
+use app\admin\model\Role;
+use app\admin\model\Connect;
+use think\Db;
+use think\Request;
 class Auth extends Controller 
 {
 	protected $is_login = [''];
@@ -12,6 +16,23 @@ class Auth extends Controller
 		{
 			$this->error('您还未登录，请先登录',url('admin/auth/login'));
 		}
+		/*$username = session('admin')['username'];
+		if(!empty($username)&&$username!=='admin'){
+				$rolenum = Db::query("select rp.nid from snacks_auser as a,snacks_role as r,snacks_connect as c,snacks_roleplay as rp where a.id=c.uid and 
+	        r.rid=c.rid and r.rid=rp.rid and a.username='$username'");
+				if(!empty($rolenum)){
+					$nid = $rolenum['0']['nid'];
+			        $quanxian = Db::query("select route from snacks_node where nid in ($nid)");
+			        $authinfo = strtolower(Request::instance()->controller());
+					$name = strtolower(Request::instance()->action());
+					$acting = 'admin/' . $authinfo . '/' .$name;
+					if(!in_array($acting,$quanxian))
+					{
+						$this->error('没有权限访问');
+						exit;
+					}
+				}
+		}	 */
 	}
 	public function checklogin()
 	{
@@ -21,7 +42,7 @@ class Auth extends Controller
 	{
 		return $this->fetch();
 	}
-	public function dologin(Auth $auth)
+	public function dologin(Auser $auth)
 	{
 		$validate = new Validate([
 			'captcha|验证码'=>'require|captcha'
@@ -41,21 +62,18 @@ class Auth extends Controller
 		}
 		$userinfo = $auth->checkpwdModel($info);
 		if($userinfo){
+			$user = new Auser;
+			$username = $_POST['username'];
+			$user->save([
+				'logintime'=>time(),
+				],['username'=>$username]);
+			$info = $user->checkusernameModle();
 			session('admin', $info);
 			$this->success('登录成功','admin/index/index');
 		}else{
 			$this->error('密码错误');
 		}
 	}
-	/*public function checkusername(Auth $auth){
-		$name = $_POST['name'];
-		$re = $auth->checkusernameModle($name);
-		if($re){
-			echo json_encode('存在');
-		}else{
-			echo json_encode('不存在');
-		}
-	}*/
 	public function loginout()
 	{
 		session(null);

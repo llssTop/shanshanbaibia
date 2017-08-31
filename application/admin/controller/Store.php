@@ -12,4 +12,8 @@ class Store extends Auth
 	{
 		return $this->fetch();
 	}
+	public function shopping_detailed()
+	{
+		return $this->fetch();
+	}
 }
