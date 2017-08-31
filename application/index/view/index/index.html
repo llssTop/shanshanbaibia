@@ -49,10 +49,10 @@
 																			<dt><span title="{$smallDetail.cname}">{$smallDetail.cname}</span></dt>
 																				{volist name = "litter" id="litterDetail"}
 																						{if $litterDetail.pid == $smallDetail.cid}
-																						<dd><a title="{$litterDetail.cname}" href="#"><span>{$litterDetail.cname}</span></a></dd>
+																						<dd><a title="{$litterDetail.cname}" href="{:url('index/details/introduction?sid='.$smallDetail['cid'])}"><span>{$litterDetail.cname}</span></a></dd>
 																							{volist name ="alitter" id ="alitterDetail"}
 																								{if $alitterDetail.pid == $litterDetail.cid}
-																								<dd><a title="{$alitterDetail.cname}" href="#"><span>{$alitterDetail.cname}</span></a></dd>
+																								<dd><a title="{$alitterDetail.cname}" href="{:url('index/details/introduction?sid='.$litterDetail['cid'])}"><span>{$alitterDetail.cname}</span></a></dd>
 																							{/if}
 																							{/volist}
 																							{/if}
@@ -219,7 +219,7 @@
 					<div class="clear "></div>
                     <div id="f1">
 					<!--甜点-->
-					{volist name="newarr" id="bigCate"}
+					{volist name="litter" id="bigCate"}
 					<div class="am-container ">
 						<div class="shopTitle ">
 							<input type="hidden" value="{$bigCate.cid}" class="cid">

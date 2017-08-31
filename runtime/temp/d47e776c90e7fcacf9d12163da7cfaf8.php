@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1504071618;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1504148332;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1504158188;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1504148332;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -293,13 +293,13 @@
 									<label class="am-form-label">性别</label>
 									<div class="am-form-content sex">
 										<label class="am-radio-inline">
-											<input type="radio" name="radio10" value="male" data-am-ucheck> 男
+											<input type="radio" name="radio10" value="0" data-am-ucheck> 男
 										</label>
 										<label class="am-radio-inline">
-											<input type="radio" name="radio10" value="female" data-am-ucheck> 女
+											<input type="radio" name="radio10" value="1" data-am-ucheck> 女
 										</label>
 										<label class="am-radio-inline">
-											<input type="radio" name="radio10" value="secret" data-am-ucheck> 保密
+											<input type="radio" name="radio10" value="2" data-am-ucheck> 保密
 										</label>
 									</div>
 								</div>
@@ -357,25 +357,7 @@
 								<div class="info-btn">
 									<div class="am-btn am-btn-danger" id ="change">保存修改</div>
 								</div>
-								<script type="text/javascript">
-								     $("#change").click(function(){
-								     	$.post("<?php echo url('index/user/upinfo'); ?>",
-								     		{
-								     			uname:$("#user-name2").val(),
-									     		sex:$("input[type='radio']:checked").val(),
-									     		result:$("#sel1").val() + '/' + $("#sel2").val() + '/' +$("#sel3").val(),
-									     		phone:$("#user-phone").val(),
-									     		email:$("#user-email").val()
-								     	},function(data){
-								     		//console.log(data);
-												if(data['errcode']=='1'){
-													 $this->success('成功',url('index/user/information'));
-												}else{
-													 $this->error('失败',url('index/user/information'));
-												}
-											},'json');
-								     });
-							</script>
+
 							</form>
 						</div>
 					</div>
@@ -543,6 +525,31 @@
 	    } 
     }
  </script>
+
+
+
+ <script type="text/javascript">
+								    $("#change").click(function(){
+alert(36473);
+								     	$.post("<?php echo url('index/user/upinfo'); ?>",
+								     		{
+								     			uname:$("#user-name2").val(),
+									     		sex:$("input[type='radio']:checked").val(),
+									     		result:$("#sel1").val() + '/' + $("#sel2").val() + '/' +$("#sel3").val(),
+									     		phone:$("#user-phone").val(),
+									     		email:$("#user-email").val()
+								     	},function(data){
+								     			if(data['errcode']=='1'){
+													 $this->success('成功',url('index/user/information'));
+												}else{
+													 $this->error('失败',url('index/user/information'));
+												}
+											},'json');
+								    });
+								    
+								     	
+								    
+							</script>
 		<div class="footer ">
 			<div class="footer-hd ">
 				<p>

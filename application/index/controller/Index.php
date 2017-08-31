@@ -18,6 +18,7 @@ class Index extends controller
 	}
 	public function index(Request $request)
 	{
+		$sid = $request->param('sid');
 		$re = $this->category->list();
 		$small =$this->category->smallList();
 		$litter =$this->category->litterList();
@@ -28,6 +29,7 @@ class Index extends controller
 		if($detailsInfo){
 			$this->assign('detInfoma',$detailsInfo);
 		}
+		
 		$this->assign('newarr',$re);
 		$this->assign('small',$small);
 		$this->assign('litter',$litter);

@@ -158,6 +158,7 @@ class User extends Controller
 	}
 	public function upInfo()
 	{
+		//dump($_POST);die;
 		if(!empty($_POST)){
 			$data = $_POST;
 			$result = $this->user->changeInfo($data);

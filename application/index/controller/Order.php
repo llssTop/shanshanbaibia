@@ -25,7 +25,7 @@ class Order extends Controller
 			
 			$shopsum = $this->cart->selectDetail($uid);
 			//dump($shopsum);die;
-			session('cartsum',"$count");
+			session('cartsum',$count);
 			$this->assign('countnum',$count);
 			$this->assign('shopsum',$shopsum);
 		}
