@@ -1,49 +1,43 @@
 			<script type="text/javascript" src="__HJS_PATH__jquery.js"></script>
 						<script type="text/javascript">
-		        function add(sid){
-			        var t = $('#mon' + sid);
-			        console.log(t);
-			        t.val(parseInt(t.val())+1);
-			        //price
-			        var price = parseFloat($('#price' + sid).text());
-			        //ccount
-			        var count = parseInt(t.val());
+					        function add(sid){
+						        var t = $('#mon' + sid);
+						        console.log(t);
+						        t.val(parseInt(t.val())+1);
+						        //price
+						        var price = parseFloat($('#price' + sid).text());
+						        //ccount
+						        var count = parseInt(t.val());
 
-			        var sum = price * count;
+						        var sum = price * count;
 
-			        $('#count'+sid).text(sum.toFixed(2));
-		        }
+						        $('#count'+sid).text(sum.toFixed(2));
+					        }
 
-		        function del(sid){
-		        	var t=$(('#mon' + sid));
-		        	
-			        t.val(parseInt(t.val())-1)
-			        if(parseInt(t.val())<0) {
-				        t.val(0);
-			         }
-			        var price = parseFloat($('#price' + sid).text());
-			        var count = parseInt(t.val());
-			        var sum = price * count;
-
-			        $('#count'+sid).text(sum.toFixed(2));
-		        }
-
+					        function del(sid){
+					        	var t=$(('#mon' + sid));
+					        	
+						        t.val(parseInt(t.val())-1)
+						        if(parseInt(t.val())<0) {
+							        t.val(0);
+						         }
+						        var price = parseFloat($('#price' + sid).text());
+						        var count = parseInt(t.val());
+						        var sum = price * count;
+						        $('#count'+sid).text(sum.toFixed(2));
+					        }
 			</script>
 			<script type="text/javascript">
-				//var ccount = document.getElementById("J_Total"); //显示商品总钱的标签节点对象
-				//var money = document.getElementsByName('totle');
+				
+                   // 得到的check 标签的 用来判断是否选择 需要循环判断
+                  // 得到显示总钱数的标签
+                  // 得到兄弟的兄弟的的值。
 
-					var oId = document.getElementsByName('items[]');
+
+
 					
-					var length = oId.length;
-					//console.log(length);
-					//var ok = money.innerText;
-					for (var i=0;i<length ;i++){
-						if(oId[i].checked == true){
-							totlecount = money.innerText + totlecount;
-						}
-					}
-					 ccount.innerHTML = totlecount;
+					// ccount.text(totlecount);
+					 //console.log()
 
 				
 			</script>
@@ -79,13 +73,15 @@
 						<div class="bundle  bundle-last ">
 							<div class="clear"></div>
 							<div class="bundle-main">
+
 								{if !empty(session('username'))}
 								{volist name="shopsum" id="gwc"}
 								<ul class="item-content clearfix">
 									<li class="td td-chk">
+										
 										<div class="cart-checkbox ">
-											<input class="check" id="J_CheckBox_170037950254" name="items[{$gwc.sid}]" value="170037950254" type="checkbox">
-											<label for="J_CheckBox_170037950254"></label>
+											<input class="check checkinfo" sid="{$gwc.sid}" type="checkbox">
+											<label for="{$gwc.sid}"></label>
 										</div>
 									</li>
 									<li class="td td-item">
@@ -127,7 +123,7 @@
 													</em>
 												</div>
 												<div class="price-line">
-													<em class="J_Price price-now" tabindex="0" id="price{$gwc.sid}">{switch name ="$gwc.activity"}
+													<em class=" J_Price price-now" tabindex="0" id="price{$gwc.sid}">{switch name ="$gwc.activity"}
 														{case value="0"}
 														{$gwc.price}
 														{/case}
@@ -153,14 +149,16 @@
 									</li>
 									<li class="td td-sum">
 										<div class="td-inner">
-											<em tabindex="0" class="J_ItemSum number" id="count{$gwc.sid}" name="totle">{switch name ="$gwc.activity"}
+											<em tabindex="0" class="Money J_ItemSum number" id="count{$gwc.sid}" name="totle">
+												{switch name ="$gwc.activity"}
 														{case value="0"}
-														¥{$gwc.price}
+														{$gwc.price}
 														{/case}
 														{case value="1"}   
 														<?php echo $gwc['price']*0.9;?> 
 														{/case}
-														{/switch}</em>
+														{/switch}
+													</em>
 										</div>
 									</li>
 
@@ -180,7 +178,7 @@
 				<div class="float-bar-wrapper">
 					<div id="J_SelectAll2" class="select-all J_SelectAll">
 						<div class="cart-checkbox">
-							<input class="check-all check" id="J_SelectAllCbx2" name="select-all" value="true" type="checkbox" onclick="selAll(this.checked)">
+							<input class="check-all check" id="J_SelectAllCbx2" name="select-all" type="checkbox">
 							<label for="J_SelectAllCbx2"></label>
 						</div>
 						<span>全选</span>
@@ -200,10 +198,10 @@
 						</div>
 						<div class="price-sum">
 							<span class="txt">合计:</span>
-							<strong class="price">¥<em id="J_Total">0.00</em></strong>
+							<strong class="price">¥<em id="c">0.00</em></strong>
 						</div>
 						<div class="btn-area">
-							<a href="/index/order/pay/" id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
+							<a href="#" id="J_Go" onclick="jiesuan()" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
 								<span>结&nbsp;算</span></a>
 						</div>
 					</div>
@@ -211,7 +209,7 @@
 			</div>
 			<script type="text/javascript">
 			// 全选按钮 点击全选所有的都可以选上
-				var oId = document.getElementsByName('items[]');
+/*				var oId = document.getElementsByName('items[]');
 				var oAll = document.getElementsByName('select-all')[0];
 				var count = oId.length;
 				for (var i = 0; i < count; i++) {
@@ -231,11 +229,24 @@
 					for (var i in oId) {
 						oId[i].checked = stu;
 					}
-				}
-				
+				}*/
+				// function quanxuan(obj){
+				// 	var checkinfo = $('.check');
+				// 	for(var i =0;i<checkinfo.length;i++){
+				// 		if($(checkinfo[i]).prop('checked')){
+				// 			alert($(checkinfo[i]).parent().parent().next().next().next().next().next().find('.Money').html());
+				// 		}
+				// 	}
+				// }
+				// function danxuan(obj){
+
+				// 	var money = $(obj).parent().parent().next().next().next().next().next().find('.Money').html();
+				// 	/*alert(money);
+				// 	var sid = $(obj).val();*/
+				// 	$('#J_Total').html(money);
+				// }
 			</script>
 			
-
 			<!--操作页面-->
 			<div class="theme-popover-mask"></div>
 		<!--引导 -->
@@ -246,6 +257,69 @@
 			<li><a href="{:url('index/collection/collection')}"><i class="am-icon-user"></i>我的</a></li>					
 		</div>
 	</body>
+								<script type="text/javascript">
+                                            var num = 0;
+                                            var count =0;
+                                            var size =[];
+                                            var sidnum = [];
+											$('.checkinfo').change(function(){
+												var checkbox = $(this);
+												var sid = parseInt(checkbox.attr('sid'));
+												count = parseFloat($('#count' + sid).text());
+												var value = checkbox.attr('checked');
+												if (value) {
+													sidnum[sid] =parseInt(sid); 
+													parseInt(++num);
+													//alert(num);
+													size[sid] =parseInt($("#mon" + sid).val());
+													//console.log(size);
+													f = parseFloat($('#c').text()) + count;
+													$('#J_SelectedItemsCount').text(num);
+													$('#c').text(f.toFixed(2));
+												} else {
+													parseInt(--num);
+													f = parseFloat($('#c').text()) - count;
+													$('#J_SelectedItemsCount').text(num);
+													$('#c').text(f.toFixed(2));
+												}
+												
+											})
+											$('#J_SelectAllCbx2').change(function(){
 
+												checkinfo = $(this).prop('checked');
+												if(checkinfo){
+													$('.checkinfo').prop('checked',true).change();
+												} else {
+													$('.checkinfo').prop('checked',false).change();
+													num=0;
+													count=0;
+													$('#J_SelectedItemsCount').text(num);
+													$('#c').text(count);
+												}
+												
+											})
+				
+			</script>
+			<script type="text/javascript">
+			    var size = []; 
+			    var godnum = [];
+			    var ordersize = 0;
+				function jiesuan()
+				{
+					var checkinfo = $('.check');
+					for(var i =0;i<checkinfo.length;i++){
+						if($(checkinfo[i]).prop('checked')){
+							ordersize++;
+							size[i]=parseInt($(checkinfo[i]).parent().parent().next().next().next().next().next().find('.Money').text());
+							godnum[i]=parseInt($(checkinfo[i]).parent().parent().next().next().next().next().find('.text_box').val());
+						}
+					}
+					var zongmoney = parseInt($("#c").text());
+					var zongnum = parseInt($("#J_SelectedItemsCount").text());
+					$.post("{:url('index/order/orderdetial')}",{size:size,godnum:godnum,zongnum:zongnum,zongmoney:zongmoney,ordersize:o},function(data){
+
+					},'json');
+				}
+			</script>
 </html>
 

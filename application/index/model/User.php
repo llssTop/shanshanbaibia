@@ -103,4 +103,9 @@ class User extends Model
 		$uid = session('userid');
 		$result = Db::name('user')->where('uid',"$uid")->update(['email'=>"$email"]);
 	}
+
+	/*public function userInfo($uid)
+	{
+		return  Db::name('user')->where('uid',"$uid")->find();
+	}*/
 }

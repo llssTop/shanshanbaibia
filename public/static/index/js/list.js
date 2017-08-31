@@ -121,7 +121,7 @@ $(document).ready(function() {
 				$('#min').attr('disabled', false);
 			}
 		})
-		//数量减少操作
+	//数量减少操作
 	$("#min").click(function() {
 		t.val(parseInt(t.val())-1);
 		if (parseInt(t.val()) == 1) {

@@ -44,6 +44,7 @@
 										</div>
 									</div>
 									<!--全部的订单-->
+									{if !empty($result)}
 						      		{foreach $result as $key => $value}
 									<div class="order-main">
 										<div class="order-list">
@@ -185,6 +186,7 @@
 									</div>
 								{/foreach}
 						      </div>
+						      {/if}
 						      <!--待付款的订单-->
 							    <div class="am-tab-panel am-fade " id="tab2">
 									<div class="order-top">
@@ -210,7 +212,7 @@
 											<td class="td-inner">交易操作</td>
 										</div>
 									</div>
-									
+									{if !empty($result)}
 						      		{foreach $result as $key => $value}
 									<div class="order-main">
 										<div class="order-list">
@@ -304,6 +306,7 @@
 									</div>
 								{/foreach}
 						      </div>
+						      {/if}
 						      <!--待发货-->
 						      <div class="am-tab-panel  am-fade" id="tab3">
 									<div class="order-top">
@@ -329,7 +332,7 @@
 											<td class="td-inner">交易操作</td>
 										</div>
 									</div>
-									<!--全部的订单-->
+									{if !empty($result)}
 						      		{foreach $result as $key => $value}
 									<div class="order-main">
 										<div class="order-list">
@@ -421,6 +424,7 @@
 									</div>
 								{/foreach}
 						      </div>
+						      {/if}
 						      <!--待收货-->
 						      <div class="am-tab-panel  am-fade" id="tab4">
 									<div class="order-top">
@@ -446,7 +450,7 @@
 											<td class="td-inner">交易操作</td>
 										</div>
 									</div>
-									
+									{if !empty($result)}
 						      		{foreach $result as $key => $value}
 									<div class="order-main">
 										<div class="order-list">
@@ -538,7 +542,7 @@
 									</div>
 								{/foreach}
 						      </div>
-						     
+						     {/if}
 						      <script type="text/javascript">
 						      		$("#oksave").click(function(){
 						      			$.post("{:url('index/order/orderstatus')}",{oid:$("#oid").val()},function(data){
@@ -571,6 +575,7 @@
 											<td class="td-inner">交易操作</td>
 										</div>
 									</div>
+									{if !empty($result)}
 						      		{foreach $result as $key => $value}
 									<div class="order-main">
 										<div class="order-list">
@@ -667,16 +672,16 @@
 									</div>
 								{/foreach}
 						      </div>
+						      {/if}
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+			
 				<!--底部-->
-			</div>
-			<div style="position:absolute; top:150px; left:65px;">
+			<div style="position:fixed; top:150px; left:65px;">
 			<aside class="menu">
 				<ul>
 					<li class="person">

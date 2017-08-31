@@ -109,25 +109,17 @@ class Order extends Controller
 	public function order()
 	{
 		$result = $this->order->checkOrder();
-		//dump($result);die;
-		/*foreach ($result as $key => $value) {
-				$mount= $value['amount'];
-				$amount[$key] = explode(',',$mount);
-				//dump($amount);
-				$this->assign('amount',$amount);
-		}	*/
-		// 查询当前用户的所有订单
-		
-		for($i = 0; $i < count($result); $i++){
+		if($result)
+		{
+			for($i = 0; $i < count($result); $i++){
 			//往数组里面添加一个字段
 			//$arr = $result[$i]['']
 			$result[$i]['shop_name'] = $this->order->selectshop($result[$i]['sid']);
 			$result[$i]['amountnum'] = explode(',',$result[$i]['amount']);
-
 		}
-		//dump($result);die;
-		//dump($result[0]['shop_name']);die;
-		$this->assign('result',$result);
+			$this->assign('result',$result);
+		}
+		
 		return $this->fetch();
 	}
 	public function orderinfo()
@@ -148,5 +140,20 @@ class Order extends Controller
 	{
 		$oid = $_POST['oid'];
 		$updatestatus = $this->order->upstatus($oid);
+	}
+	public function orderdetial()
+	{
+		//dump($_POST);
+		$ordercode = $_SERVER['REMOTE_ADDR'];
+		if($ordercode=='::1'){
+			$ordercode = '127.0.0.1';
+		}
+		$ordercode = ip2long($ordercode);
+		$ordercode =substr($ordercode,4);
+		$time = time();
+		$ordercode . = $time;
+		$data = $_POST;
+		$result = $this->order->addorder($data,$ordercode);
+		
 	}
 }

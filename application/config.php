@@ -247,8 +247,9 @@ return [
 	'paginate' => [
 		'type' => 'bootstrap',
 		'var_page' => 'page',
-		'list_rows' => 15,
+		'list_rows' => 2,
 	],
+	
 	 'captcha' => [
         // 验证码字符集合
         'codeSet' => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',

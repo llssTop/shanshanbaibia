@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1504008069;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1503976753;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\user\information.html";i:1504071618;s:73:"F:\wamp64\www\shanshanbaibia\public/../application/index\view\layout.html";i:1504065665;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -56,7 +56,7 @@
 							</div>
 							<?php else: ?>
 							<div class="topMessage mini-cart">
-								<div class="menu-hd"><a id="mc-menu-hd" href="<?php echo url('index/order/shopcart'); ?>" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+								<div class="menu-hd"><a id="mc-menu-hd" href="<?php echo url('index/order/shopcart'); ?>" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h"><?php  echo session('cartsum')?></strong></a></div>
 							</div>
 							<?php endif; ?>
 							<div class="topMessage favorite">
@@ -403,8 +403,6 @@
 						
 						</ul>
 					</li>
-					
-
 					<li class="person">
 						<a href="#">我的小窝</a>
 						<ul>
@@ -414,7 +412,6 @@
 							<li> <a href="<?php echo url('index/collection/news'); ?>">消息</a></li>
 						</ul>
 					</li>
-
 				</ul>
 			</aside>
 		</div>
